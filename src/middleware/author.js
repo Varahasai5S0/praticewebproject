@@ -11,11 +11,10 @@ const author = async(req, res, next) => {
         const user = await Register.findOne({ _id: verifyUser._id });
         req.token = token;
         req.user = user;
-        const articles = await Coursedata.find({});
         res.redirect('/secret');
         next();
     } catch (error) {
-        res.render('index');
+        res.status(401).render("index");
         next();
         //res.status(401).send(error);
     }

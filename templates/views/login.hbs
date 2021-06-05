@@ -27,7 +27,7 @@
                     <form action="\login" method="POST">
                     <div class="row px-4"> <label class="mb-1">
                             <h2 class="mb-1">Email Address</h2>
-                        </label> <input class="mb-4" type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter a valid email address" required> </div>
+                        </label> <input id="need" class="mb-4" type="email" name="email" oninput="Myfunction()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter a valid email address" required> </div>
                     <div class="row px-4"> <label class="mb-1">
                             <h2 class="mb-1">Password</h2>
                         </label> <input type="password" name="password" placeholder="Enter password"  required> </div>
@@ -40,7 +40,5 @@
         </div>
     </div>
 </div>
-
-        
  </body>
 </html>
