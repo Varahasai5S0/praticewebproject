@@ -5,11 +5,15 @@
     </head>
     <body>
         {{>header}}
-        <a href="/blog" class="btn btn-primary">ALL ARticles</a>
+        <div>
+        <a href="/blog" class="btn btn-primary">ALL ARTICLES</a>
+        </div>
+        <div class="contaniner-fluid my-3 px-2">
         <form action='/blog/new' method='POST'>
   <div class="form-group">
     <label for="exampleFormControlInput1">Title</label>
     <input type="text" name="title" class="form-control" id="title1">
+    <span id="demo"></span>
   </div>
 
 
@@ -22,8 +26,9 @@
     <label for="exampleFormControlTextarea1">markdown</label>
     <textarea class="form-control" name="markdown" id="textarea"></textarea>
   </div>
-  <button type="submit" class="btn btn-secondary">Add</button>
-  <a href="/" class="btn btn-danger">Cancel</a>
+  </div>
+  <button type="submit" class="btn btn-secondary" id="submit">Add</button>
+  <a href="/blog" class="btn btn-danger">Cancel</a>
 </form>
 <script>
     var textarea = document.getElementById("textarea");
@@ -33,6 +38,33 @@ textarea.oninput = function() {
   textarea.style.height = "";
   textarea.style.height = Math.min(textarea.scrollHeight, limit) + "px";
 };
+</script>
+<script>
+  $(document).ready(function(){
+        $('#title1').on('blur',function(){
+            var title = $('#title1').val();
+            if(title=='') return
+            $.ajax({
+                url:"/titlecheck/",
+                type:"GET",
+                data:{
+                    'title':title,
+                },
+                success: function(response){ 
+                    if(response=='taken'){
+                        document.getElementById("demo").innerHTML = "modify title";
+                       document.getElementById("submit").disabled = true;
+                    }
+                    else if(response=='not_taken'){
+                      document.getElementById("demo").innerHTML = "";
+                      document.getElementById("submit").disabled = false;
+                     
+                  }
+                }
+
+            })
+        })
+    })
 </script>
     </body>
 </html>

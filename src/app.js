@@ -197,7 +197,25 @@ app.post('/login', async(req, res) => {
     }
 })
 
-app.get('/')
+app.get('/autocheck', async(req, res, next) => {
+    const a = req.query.email;
+    const at = await Register.findOne({ email: a });
+    if (at != null) {
+        res.send('taken');
+    } else {
+        res.send('not_taken');
+    }
+})
+
+app.get('/titlecheck', async(req, res, next) => {
+    const a = req.query.title;
+    const at = await Blogdata.findOne({ title: a });
+    if (at != null) {
+        res.send('taken');
+    } else {
+        res.send('not_taken');
+    }
+})
 
 app.get('/autocomplete/', function(req, res, next) {
     var regex = new RegExp(req.query["term"], "i");
