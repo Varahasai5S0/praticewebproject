@@ -79,7 +79,11 @@ button.btn {
         {{>header}}
 <div class="form4 cax my-4">
     <div class="container-fluid">
-      <h1 class="text-primary">New Blog</h1>
+          <h1 class="text-primary">New Blog/
+        <span>
+          <a href="/blog" class="text-danger">All Articles</a>
+        </span>
+      </h1>
         <div class="row">
             <div class="col-md-7 col-md-offset-2">
                 <div class="form-bg">
@@ -92,7 +96,7 @@ button.btn {
                           <input type="text" class="form-control" aria-required="true" id="emailNine" placeholder="Description" name="description" required> </div>
                         <div class="form-group"> 
                           <label class="sr-only">Markdown Text</label> 
-                          <textarea name="markdoen" class="form-control" aria-required="true" rows="7" id="textarea" placeholder="Write Blog" required></textarea> </div> 
+                          <textarea name="markdown" class="form-control" aria-required="true" rows="7" id="textarea" placeholder="Write Blog" required></textarea> </div> 
                          <div class="form-group">
                           <button type="submit" class="btn text-center btn-blue">Create</button>
                           <a href="/blog" class="btn text-center btn-danger">Cancel</a>

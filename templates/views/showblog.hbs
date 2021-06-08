@@ -6,10 +6,11 @@
     <body>
         {{>header}}
         <div class="container-fluid px-3 py-4">
+            <a class="text-danger" href="/blog">All articles/</a>
             <div class="card">
                 <h1>{{post.title}}</h1>
-                <h1>{{post.createdAt}}</h1>
-                <p>{{{post.sanitizedHtml}}}</p>
+                <h2>{{post.description}}</h2>
+                <h3>{{{post.sanitizedHtml}}}</h3>
             </div>
         </div>
         <h1>Comments::</h1>
@@ -27,6 +28,6 @@
   <button type="submit" class="btn btn-primary">Add</button>
   </form>
   </div>
-        <a class="btn btn-primary" href="/blog">All articles</a>
+        
     </body>
 </html>
