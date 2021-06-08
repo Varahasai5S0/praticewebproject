@@ -40,6 +40,9 @@ const blogSchema = new mongoose.Schema({
     comments: [{
         comment: {
             type: String
+        },
+        user: {
+            type: String
         }
     }]
 

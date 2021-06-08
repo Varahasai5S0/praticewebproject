@@ -45,11 +45,12 @@ router.get('/:slug', async(req, res) => {
     res.render("showblog", { post: act });
 })
 
-router.post('/check/:slug', async(req, res) => {
+router.post('/check/:slug', poss, async(req, res) => {
     try {
         const article = await blogdata.findOne({ slug: req.params.slug });
         const add = req.body.comm;
-        article.comments = article.comments.concat({ comment: add });
+        const user = req.user.firstname;
+        article.comments = article.comments.concat({ comment: add, user: user });
         article.save();
         res.render("showblog", { post: article })
     } catch (e) {
