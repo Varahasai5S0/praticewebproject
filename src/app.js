@@ -81,8 +81,7 @@ app.get('/secret/:id', async(req, res) => {
 
 app.get('/courses', async(req, res) => {
     const articles = await Coursedata.findOne({ title: 'doctor' });
-    console.log(articles);
-    res.render('car', {
+    res.render('show', {
         post: articles
     });
 })
@@ -306,6 +305,7 @@ app.post('/contact', poss, async(req, res) => {
         const review = new Contactuser({
             username: req.user.email,
             name: req.user.firstname,
+            topic: req.body.topic,
             comment: req.body.comment
         })
 

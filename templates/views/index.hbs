@@ -38,17 +38,33 @@
   perspective: 1000px;
   transform-origin: center;
 }
+.imagex{
+        height:40vw;
+        width:60vw;
+      }
+      p{
+        font-weight: 600;
+      }
+      h1{
+        font-weight: 800;
+      }
     }
     @media screen and (max-width: 480px) 
     {
+      .imagex{
+        height:70vw;
+        width:90vw;
+      }
       .xy{
  padding-top:4rem;
       }
       p{
-        font-size:10px;
+        font-size:20px;
+        font-weight: 600;
       }
       h1{
-        font-size:16px;
+        font-size:28px;
+        font-weight: 700;
       }
       .icon-cards__item {
   position: absolute;
@@ -56,10 +72,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 60vw;
+  width: 90vw;
   height: 70vw;
-  max-width: 380px;
-  max-height: 250px;
+  max-width: 480px;
+  max-height: 450px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   transform-origin: center;
@@ -68,10 +84,10 @@
         .icon-cards {
          
   position: relative;
-  width: 60vw;
+  width: 90vw;
   height: 70vw;
-  max-width: 380px;
-  max-height: 350px;
+  max-width: 480px;
+  max-height: 450px;
   margin: 20rem  auto;
   color: white;
   perspective: 1000px;
@@ -209,7 +225,7 @@ body {
       <figure class="icon-cards xy mt-3">
   <div class="icon-cards__content">
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" style="heigth:40vw;width:60vw;">
+      <img class="imagex" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
       <span class="a">
         <h1 class="text-primary text-center">Welcome</h1>
         <p class="text-danger text-center">to</p>
@@ -217,14 +233,14 @@ body {
         </span>
     </div>
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" style="heigth:40vw;width:60vw;">
+      <img class="imagex" src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" >
       <span class="a">
-        <p class="text-danger">Let's start the Funride</p>
+        <p class="text-info">Let's start the Funride</p>
         <a href="/login" class="btn btn-primary">Login</a>
       </span>
      </div>
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" style="heigth:40vw;width:60vw;">
+      <img class="imagex" src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" >
    <span class="a">
         <p class="text-dark">No more doubts about future??</p>
         <a href="/register" class="btn btn-info">Register</a>

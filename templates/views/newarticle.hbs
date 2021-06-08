@@ -2,34 +2,107 @@
 <html>
     <head>
         {{>link}}
+        <style>
+          *{
+            box-sizing: border-box;
+          }
+          .form4 {
+    background-size: cover;
+}
+@media screen and (min-width: 480px) {
+  .cax{
+    margin-left:350px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cax{
+    margin-left:0px;
+  }
+}
+.form-bg {
+   background: rgba(68, 68, 65, 0.77);
+    padding: 20px
+}
+
+
+.form {
+    background-color: white !important;
+    padding: 20px
+}
+
+.form-group {
+    margin-bottom: 20px
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0
+}
+
+.form-control {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #61615e;
+    background: transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
+}
+
+button.btn {
+    display: block;
+    padding: 11px 32px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    margin: 30px 0px
+}
+
+.btn-blue {
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid #4285f4
+}
+        </style>
     </head>
     <body>
         {{>header}}
-        <div>
-        <a href="/blog" class="btn btn-primary">ALL ARTICLES</a>
+<div class="form4 cax my-4">
+    <div class="container-fluid">
+      <h1 class="text-primary">New Blog</h1>
+        <div class="row">
+            <div class="col-md-7 col-md-offset-2">
+                <div class="form-bg">
+                    <form class="form" action="/blog/new" method="POST">
+                        <div class="form-group"> 
+                          <label class="sr-only">Title</label> 
+                          <input type="text" name="title" class="form-control" aria-required="true" id="title1" placeholder="Title" required> </div>
+                        <div class="form-group"> 
+                          <label class="sr-only">Description</label> 
+                          <input type="text" class="form-control" aria-required="true" id="emailNine" placeholder="Description" name="description" required> </div>
+                        <div class="form-group"> 
+                          <label class="sr-only">Markdown Text</label> 
+                          <textarea name="markdoen" class="form-control" aria-required="true" rows="7" id="textarea" placeholder="Write Blog" required></textarea> </div> 
+                         <div class="form-group">
+                          <button type="submit" class="btn text-center btn-blue">Create</button>
+                          <a href="/blog" class="btn text-center btn-danger">Cancel</a>
+                    </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="contaniner-fluid my-3 px-2">
-        <form action='/blog/new' method='POST'>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Title</label>
-    <input type="text" name="title" class="form-control" id="title1">
-    <span id="demo"></span>
-  </div>
-
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">markdown</label>
-    <textarea class="form-control" name="markdown" id="textarea"></textarea>
-  </div>
-  </div>
-  <button type="submit" class="btn btn-secondary" id="submit">Add</button>
-  <a href="/blog" class="btn btn-danger">Cancel</a>
-</form>
+    </div>
+</div>
 <script>
     var textarea = document.getElementById("textarea");
 var limit = 250;

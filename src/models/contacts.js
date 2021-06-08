@@ -7,6 +7,9 @@ const contactSchema = new mongoose.Schema({
     name: {
         type: String
     },
+    topic: {
+        type: String
+    },
     comment: {
         type: String
     }
