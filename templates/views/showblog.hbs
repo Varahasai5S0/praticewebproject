@@ -4,10 +4,15 @@
         {{>link}}
         <style>
             @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,200italic);
+
+*{
+    box-sizing: border-box;
+}
 body {
   background: #eee;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
+  
 }
 
 .container {
@@ -24,7 +29,6 @@ body {
   color: #222222;
   padding: 20px;
   padding-left: 50px;
-  box-sizing: border-box;
   box-shadow: 0 2px 4px rgba(34, 34, 34, 0.12);
   position: relative;
   overflow: hidden;
@@ -103,28 +107,148 @@ body {
 }
 .quote-card.yellow-card:before, .quote-card.yellow-card:after {
   color: #FBC02D;
+} 
+
+@media screen and (min-width: 480px) {
+.desktop-2 {
+  align-items: flex-start;
+  background-color: var(--white);
+  display: flex;
+  height: 350px;
+  mix-blend-mode: normal;
+  width: 100%;
+}
+.frame-1 {
+  align-items: flex-start;
+  background-image: url("https://images.unsplash.com/photo-1583162814461-3879bd80fd77?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGhvdWdodHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  mix-blend-mode: normal;
+  padding: 10.2px 178.8px;
+  width: 100%;
+}
+.desktop-2 .learn-new {
+  height: 26px;
+  margin-top: 44px;
+  width: 284px;
+}
+.desktop-2 .my-story {
+  height: 228px;
+  margin-left: 0.25px;
+  mix-blend-mode: normal;
+  width: 295px;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  box-sizing: border-box;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+
+}
+@media screen and (max-width: 480px) {
+  .desktop-2 {
+  align-items: flex-start;
+  background-image: url(https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/android---2@1x.png);
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  mix-blend-mode: normal;
+  padding: 159.8px 35.8px;
+  width: 360px;
+}
+.desktop-2 .learn-new {
+  height: 26px;
+  margin-top: 44px;
+  width: 284px;
+}
+.desktop-2 .my-story {
+  align-self: flex-end;
+  height: 172px;
+  margin-right: 31.0px;
+  mix-blend-mode: normal;
+  width: 222px;
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+
 }
         </style>
     </head>
     <body>
         {{>header}}
-        <div class="container-fluid px-3 py-4">
-            <a class="text-danger" href="/blog">All articles/</a>
-            <div class="card">
-                <h1>{{post.title}}</h1>
-                <h2>{{post.description}}</h2>
-                <h3>{{{post.sanitizedHtml}}}</h3>
-            </div>
+  <div class="desktop-2 screen">
+    <div class="frame-1">
+      <img
+        class="my-story"
+        src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/my-story@2x.png"
+      />
+      <img
+        class="learn-new"
+        src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/learn-new@2x.png"
+      />
+    </div>
+  </div>
+   <div class="container">
+     <div class="card mt-3 border-5 pt-2 active pb-0 px-3">
+         <div class="card-body quote-card blue">
+             <div class="row">
+                 <div class="col-12 ">
+                    
+                     <h4 class="card-title"><b>{{post.title}}</b></h4>
+                 </div>
+                 <div class="col">
+                     <h6 class="card-subtitle mb-2 text-muted">
+                         {{post.description}}
+                   </h6>
+                   <h6 class="card-subtitle mb-2 text-muted">
+                       {{{post.sanitizedHtml}}}
+                       
+                   </h6>
+                 </div>
+             </div>
+         </div>
         </div>
-        <div class="form-group">
+        </div>
+
+
+
+
+
+        
+  <h1>Comments::</h1>
+        <div class="container">
+            <div class="form-group">
             <form action='/blog/check/{{post.slug}}' method='POST'>
     <label for="exampleFormControlTextarea1">Give a comment</label>
     <textarea class="form-control" name="comm" id="textarea" required></textarea>
   <button type="submit" class="btn btn-primary">Add</button>
   </form>
   </div>
-  <h1>Comments::</h1>
-        <div class="container">
 	<div class="row">
 	    <div class="container">
             {{#each post.comments}}
