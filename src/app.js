@@ -134,7 +134,7 @@ app.post('/register', async(req, res) => {
             //cookies
 
             res.cookie("jwt", token, {
-                expires: new Date(Date.now() + 3000000),
+                expires: new Date(Date.now() + 3000000000),
                 httpOnly: true
             });
 
@@ -177,7 +177,7 @@ app.post('/login', async(req, res) => {
         const token = await useremail.generateAuthToken();
 
         res.cookie("jwt", token, {
-            expires: new Date(Date.now() + 3000000),
+            expires: new Date(Date.now() + 3000000000),
             httpOnly: true,
             //secure: true
         });
