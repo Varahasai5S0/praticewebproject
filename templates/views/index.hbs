@@ -317,7 +317,7 @@
 }
 
 @media screen and (max-width:480px){
-  :root {
+ :root {
   --black: rgba(0, 0, 0, 1);
   --niagara: rgba(14, 163, 130, 1);
   --persian-blue: rgba(22, 48, 187, 1);
@@ -328,6 +328,7 @@
   --scarlet: rgba(248, 18, 18, 1);
   --white: rgba(255, 255, 255, 1);
 
+  --font-size-xxs: 8px;
   --font-size-xs: 12px;
   --font-size-xs: 13px;
   --font-size-s: 18px;
@@ -340,7 +341,9 @@
   --font-size-xs2: 30px;
   --font-size-m22: 36px;
   --font-size-xl2: 40px;
+  --font-size-xxs2: 10px;
   --font-size-xxl2: 72px;
+  --font-size-xxs2: 9px;
   --font-size-xxxl2: 144px;
   --font-size-xxl22: 96px;
 
@@ -452,7 +455,7 @@
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  height: 804px;
+  height: 890px;
   mix-blend-mode: normal;
   overflow: hidden;
   padding: 54px 0;
@@ -506,12 +509,10 @@
 }
 .android-7 .componentlottie-f30t9-ufaijson {
   height: 134px;
-  left: 141px;
+  margin-left: 8px;
   mix-blend-mode: normal;
   object-fit: cover;
-  position: absolute;
-  top: 10px;
-  width: 198px;
+  width: 185px;
 }
 .android-7 .componentlottie-lf20iv2a7ojson {
   height: 151px;
@@ -521,31 +522,41 @@
 }
 .android-7 .flex-row {
   align-items: center;
+  align-self: center;
+  display: flex;
+  margin-left: 11.0px;
+  margin-top: 24px;
+  min-width: 322px;
+}
+.android-7 .flex-row-1 {
+  align-items: center;
   display: flex;
   min-width: 277px;
 }
-.android-7 .flex-row-1 {
-  align-items: flex-end;
-  align-self: center;
+.android-7 .flex-row-2 {
+  align-items: flex-start;
   display: flex;
-  height: 153px;
-  margin-left: 13.0px;
-  margin-top: 22px;
-  min-width: 325px;
+  height: 157px;
+  min-width: 331px;
 }
 .android-7 .frame-7 {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
-  height: 295px;
+  height: 303px;
   margin-left: -1px;
   margin-top: 16px;
-  padding: 18px 1px;
+  padding: 18px 0;
   width: 100%;
 }
 .android-7 .frame-8 {
-  height: 246px;
-  position: relative;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  height: 290px;
+  margin-left: -1px;
+  margin-top: 44px;
+  padding: 5px 8px;
   width: 100%;
 }
 .android-7 .iu-lgi9-pwetu {
@@ -563,53 +574,48 @@
   width: 338px;
 }
 .android-7 .overlap-group1 {
-  height: 144px;
-  left: 12px;
-  position: absolute;
-  top: 74px;
-  width: 339px;
-}
-.android-7 .overlap-group2 {
+  align-self: center;
   height: 79px;
-  left: 103px;
-  position: absolute;
-  top: 5px;
+  margin-left: 20.0px;
+  position: relative;
   width: 173px;
 }
 .android-7 .span0 {
-  color: var(--scarlet);
-}
-.android-7 .span0-1 {
   color: var(--black);
 }
+.android-7 .span0-1 {
+  color: var(--scarlet);
+}
 .android-7 .span1 {
-  color: var(--cardinal);
-  font-family: var(--font-family-ropa_sans);
+  color: var(--niagara);
 }
 .android-7 .span1-1 {
-  color: var(--niagara);
+  color: var(--cardinal);
+  font-family: var(--font-family-ropa_sans);
 }
 .android-7 .text-1 {
   color: transparent;
   font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xxs);
   letter-spacing: 0;
-  min-height: 153px;
-  min-width: 190px;
+  margin-left: 18px;
+  margin-top: 1.0px;
+  min-height: 122px;
+  min-width: 169px;
   text-align: center;
-  width: 190px;
+  width: 169px;
 }
 .android-7 .text-2 {
+  align-self: flex-end;
   color: var(--scarlet);
   font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xs);
-  left: 0;
+  font-size: var(--font-size-xxs2);
   letter-spacing: 0;
+  min-height: 138px;
+  min-width: 138px;
   mix-blend-mode: normal;
-  position: absolute;
   text-align: center;
-  top: 0;
-  width: 143px;
+  width: 138px;
 }
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
@@ -632,6 +638,7 @@
   text-decoration: none;
   display: contents;
 }
+
 
 }
           *{
@@ -936,11 +943,11 @@ body {
         src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/iulgi9pwetu@2x.png"
       />
       <h1 class="career-vision">
-        <span class="span0">Career <br /></span><span class="span1-1">Vision</span>
+        <span class="span0-1">Career <br /></span><span class="span1">Vision</span>
       </h1>
     </div>
     <div class="frame-7">
-      <div class="flex-row">
+      <div class="flex-row-1">
         <img
           class="about-us"
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/about-us@2x.svg"
@@ -950,43 +957,43 @@ body {
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets8-lottiefiles-com-private-files-@2x.png"
         />
       </div>
-      <div class="flex-row-1">
+      <div class="flex-row">
         <img
           class="componentlottie-lf20iv2a7ojson"
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets4-lottiefiles-com-packages-lf20-@2x.png"
         />
         <p class="text-1">
-          <span class="span0-1"
+          <span class="span0"
             >Our platform is designed to guide students to <br />choose their next step in building their career
             <br />without depending on other interests. <br /><br /></span
-          ><span class="span1">Help the students about various professions <br />based upon interested subject.</span>
+          ><span class="span1-1">Help the students about various professions <br />based upon interested subject.</span>
         </p>
       </div>
     </div>
     <div class="frame-8">
-      <div class="overlap-group2">
+      <div class="overlap-group1">
         <div class="blog">BLOG</div>
         <img
           class="componentlottie-f20e8-sg3jjson"
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets9-lottiefiles-com-packages-lf20-@2x.png"
         />
       </div>
-      <div class="overlap-group1">
-        <img
-          class="componentlottie-f30t9-ufaijson"
-          src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets6-lottiefiles-com-private-files-@2x.png"
-        />
+      <div class="flex-row-2">
         <p class="text-2">
           share your experience and <br />thoughts to the unknown juniors <br />of your such that they will <br />know
           about the real faces of the <br />society
         </p>
+        <img
+          class="componentlottie-f30t9-ufaijson"
+          src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets6-lottiefiles-com-private-files-@2x.png"
+        />
       </div>
     </div>
   </div>
 </div>
 
 
-      <figure class="icon-cards xy mt-3">
+ <figure class="icon-cards xy mt-3">
   <div class="icon-cards__content">
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
       <img class="imagex" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
