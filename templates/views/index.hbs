@@ -3,321 +3,11 @@
     <head>
         {{>link}}
         <style>
-          :root {
-  --black: rgba(0, 0, 0, 1);
-  --persian-blue: rgba(22, 48, 187, 1);
-  --new-car: rgba(26, 67, 213, 1);
-  --alizarin-crimson: rgba(229, 23, 23, 1);
-  --orange-red: rgba(239, 27, 27, 1);
-  --scarlet: rgba(248, 18, 18, 1);
-  --white: rgba(255, 255, 255, 1);
-
-  --font-size-xs: 30px;
-  --font-size-s: 18px;
-  --font-size-l: 26px;
-  --font-size-l: 32px;
-  --font-size-xl: 64px;
-  --font-size-m2: 24px;
-  --font-size-l2: 48px;
-  --font-size-l2: 56px;
-  --font-size-m22: 36px;
-  --font-size-xl2: 40px;
-  --font-size-xxl2: 72px;
-  --font-size-xxxl2: 144px;
-  --font-size-xxl22: 96px;
-
-  --font-family-ribeye: "Ribeye";
-  --font-family-ribeye-regular: "Ribeye-Regular";
-  --font-family-ribeye_marrow: "Ribeye Marrow";
-  --font-family-righteous: "Righteous";
-  --font-family-roboto: "Roboto";
-  --font-family-roboto-regular: "Roboto-Regular";
-  --font-family-roboto_mono: "Roboto Mono";
-  --font-family-roboto_mono-regular: "Roboto Mono-Regular";
-  --font-family-ropa_sans: "Ropa Sans";
-  --font-family-rowdies: "Rowdies";
-  --font-family-ruda: "Ruda";
-  --font-family-ruthie: "Ruthie";
-  --font-family-ruthie-regular: "Ruthie-Regular";
-}
-.ribeyemarrow-normal-black-40px {
-  color: var(--black);
-  font-family: var(--font-family-ribeye_marrow);
-  font-size: var(--font-size-xl2);
-  font-weight: 400;
-  font-style: normal;
-}
-.border-1px-black {
-  border-width: 1px;
-  border-style: solid;
-  border-color: var(--black);
-}
-.ruthie-regular-normal-orange-red-36px {
-  color: var(--orange-red);
-  font-family: var(--font-family-ruthie-regular);
-  font-size: var(--font-size-m22);
-  font-weight: 400;
-  font-style: normal;
-}
-.ruthie-normal-black-72px {
-  color: var(--black);
-  font-family: var(--font-family-ruthie);
-  font-size: var(--font-size-xxl2);
-  font-weight: 400;
-  font-style: normal;
-}
-.ribeyemarrow-normal-scarlet-40px {
-  color: var(--scarlet);
-  font-family: var(--font-family-ribeye_marrow);
-  font-size: var(--font-size-xl2);
-  font-weight: 400;
-  font-style: normal;
-}
-.ribeyemarrow-normal-white-40px {
-  font-family: var(--font-family-ribeye_marrow);
-  font-size: var(--font-size-xl2);
-  font-weight: 400;
-  font-style: normal;
-}
-.robotomono-regular-normal-orange-red-24px {
-  color: var(--orange-red);
-  font-family: var(--font-family-roboto_mono-regular);
-  font-size: var(--font-size-m2);
-  font-weight: 400;
-  font-style: normal;
-}
-.ruthie-normal-orange-red-36px {
-  color: var(--orange-red);
-  font-family: var(--font-family-ruthie);
-  font-size: var(--font-size-m22);
-  font-weight: 400;
-  font-style: normal;
-}
-.ruthie-regular-normal-black-72px {
-  color: var(--black);
-  font-family: var(--font-family-ruthie-regular);
-  font-size: var(--font-size-xxl2);
-  font-weight: 400;
-  font-style: normal;
-}
-.robotomono-normal-orange-red-24px {
-  color: var(--orange-red);
-  font-family: var(--font-family-roboto_mono);
-  font-size: var(--font-size-m2);
-  font-weight: 400;
-  font-style: normal;
-}
-.roboto-bold-black-18px {
-  color: var(--black);
-  font-family: var(--font-family-roboto);
-  font-size: var(--font-size-s);
-  font-weight: 700;
-  font-style: normal;
-}
-.ruthie-normal-black-96px {
-  color: var(--black);
-  font-family: var(--font-family-ruthie);
-  font-size: var(--font-size-xxl22);
-  font-weight: 400;
-  font-style: normal;
-}
-.ruthie-normal-orange-red-40px {
-  color: var(--orange-red);
-  font-family: var(--font-family-ruthie);
-  font-size: var(--font-size-xl2);
-  font-weight: 400;
-  font-style: normal;
-}
-
-@media screen and (min-width:480px){
-.desktop-5 {
-  align-items: center;
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-  height: 1417px;
-  mix-blend-mode: normal;
-  padding: 57px 0;
-  width: 100%;
-}
-.desktop-5 .about-us {
-  height: 56px;
-  margin-top: 1.0px;
-  width: 316px;
-}
-.desktop-5 .blog {
-  align-self: flex-end;
-  color: var(--black);
-  font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xl);
-  letter-spacing: 0;
-  min-height: 79px;
-  min-width: 172px;
-  mix-blend-mode: normal;
-  text-align: center;
-  text-decoration: underline;
-}
-.desktop-5 .career-vision {
-  color: transparent;
-  font-family: var(--font-family-ribeye_marrow);
-  font-size: var(--font-size-xxxl2);
-  letter-spacing: 0;
-  min-height: 394px;
-  min-width: 573px;
-  text-align: center;
-  text-shadow: 0px 4px 4px #00000040;
-}
-.desktop-5 .componentlottie-30fb7nbt3mjson {
-  height: 116px;
-  margin-left: 10px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  width: 242px;
-}
-.desktop-5 .componentlottie-f20e8-sg3jjson {
-  height: 100px;
-  margin-left: 14px;
-  margin-top: 11px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  width: 116px;
-}
-.desktop-5 .componentlottie-f30t9-ufaijson {
-  align-self: flex-end;
-  height: 273px;
-  margin-left: 16px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  width: 336px;
-}
-.desktop-5 .componentlottie-lf20iv2a7ojson {
-  align-self: center;
-  height: 300px;
-  margin-top: 29.0px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  width: 300px;
-}
-.desktop-5 .flex-col {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin-left: 64px;
-  margin-top: -1px;
-  min-height: 357px;
-  width: 766px;
-}
-.desktop-5 .flex-col-1 {
-  align-items: flex-start;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 5.0px;
-  min-height: 297px;
-  width: 701px;
-}
-.desktop-5 .flex-row {
-  align-items: center;
-  display: flex;
-  min-width: 568px;
-}
-.desktop-5 .flex-row-1 {
-  align-items: center;
-  display: flex;
-  height: 394px;
-  margin-left: 3.0px;
-  min-width: 1241px;
-}
-.desktop-5 .frame-7 {
-  align-items: flex-start;
-  display: flex;
-  height: 465px;
-  margin-top: 108px;
-  padding: 0 130px;
-  width: 100%;
-}
-.desktop-5 .frame-8 {
-  align-items: flex-start;
-  display: flex;
-  height: 334px;
-  padding: 0 90px;
-  width: 100%;
-}
-.desktop-5 .iu-lgi9-pwetu {
-  height: 317px;
-  margin-left: 131px;
-  margin-top: 3.0px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  width: 537px;
-}
-.desktop-5 .span0 {
-  color: var(--black);
-}
-.desktop-5 .span0-1 {
-  color: var(--scarlet);
-}
-.desktop-5 .span1 {
-  color: var(--black);
-  font-size: var(--font-size-m2);
-}
-.desktop-5 .span1-1 {
-  color: #0ea382;
-}
-.desktop-5 .span2 {
-  color: #cd2032;
-  font-family: var(--font-family-ropa_sans);
-  font-size: var(--font-size-l);
-}
-.desktop-5 .text-1 {
-  align-self: flex-end;
-  color: transparent;
-  font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xs);
-  letter-spacing: 0;
-  margin-top: 1px;
-  min-height: 240px;
-  min-width: 708px;
-  text-align: center;
-  width: 708px;
-}
-.desktop-5 .text-2 {
-  color: var(--scarlet);
-  font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xs);
-  letter-spacing: 0;
-  margin-top: 11px;
-  min-height: 207px;
-  min-width: 632px;
-  mix-blend-mode: normal;
-  text-align: center;
-  width: 632px;
-}
-
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+           @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Ribeye+Marrow:400|Righteous:400|Ropa+Sans:400");
-* {
-  box-sizing: border-box;
-}
-.container-center-horizontal {
-  pointer-events: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-.container-center-horizontal > * {
-  pointer-events: auto;
-  flex-shrink: 0;
-}
-.screen a {
-  text-decoration: none;
-  display: contents;
-}
-}
 
-@media screen and (max-width:480px){
- :root {
+@media screen and (min-width:762px){
+  :root {
   --black: rgba(0, 0, 0, 1);
   --niagara: rgba(14, 163, 130, 1);
   --persian-blue: rgba(22, 48, 187, 1);
@@ -449,13 +139,347 @@
   font-weight: 400;
   font-style: normal;
 }
+.border-2px-black {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--black);
+}
+
+.desktop-5 {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 1417px;
+  mix-blend-mode: normal;
+  padding: 57px 0;
+  width: 100%;
+}
+.desktop-5 .about-us {
+  height: 56px;
+  margin-top: 1.0px;
+  width: 316px;
+}
+.desktop-5 .blog {
+  align-self: flex-end;
+  color: var(--black);
+  font-family: var(--font-family-righteous);
+  font-size: var(--font-size-xl);
+  letter-spacing: 0;
+  min-height: 79px;
+  min-width: 172px;
+  mix-blend-mode: normal;
+  text-align: center;
+  text-decoration: underline;
+}
+.desktop-5 .career-vision {
+  color: transparent;
+  font-family: var(--font-family-ribeye_marrow);
+  font-size: var(--font-size-xxxl2);
+  letter-spacing: 0;
+  min-height: 394px;
+  min-width: 573px;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+}
+.desktop-5 .componentlottie-30fb7nbt3mjson {
+  height: 116px;
+  margin-left: 30px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  width: 242px;
+}
+.desktop-5 .componentlottie-f20e8-sg3jjson {
+  height: 108px;
+  margin-left: 10px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  width: 124px;
+}
+.desktop-5 .componentlottie-f30t9-ufaijson {
+  align-self: flex-end;
+  height: 281px;
+  margin-bottom: 4px;
+  margin-left: 8px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  width: 344px;
+}
+.desktop-5 .componentlottie-lf20iv2a7ojson {
+  align-self: center;
+  height: 308px;
+  margin-top: 37.0px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  width: 308px;
+}
+.desktop-5 .flex-col {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18.0px;
+  min-height: 297px;
+  width: 701px;
+}
+.desktop-5 .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  margin-top: -1px;
+  min-height: 357px;
+  width: 766px;
+}
+.desktop-5 .flex-row {
+  align-items: center;
+  display: flex;
+  min-width: 588px;
+}
+.desktop-5 .flex-row-1 {
+  align-items: center;
+  display: flex;
+  height: 394px;
+  margin-left: 7.0px;
+  min-width: 1245px;
+}
+.desktop-5 .frame-7 {
+  align-items: flex-start;
+  background-color: #ea89899e;
+  display: flex;
+  height: 465px;
+  margin-top: 108px;
+  mix-blend-mode: normal;
+  padding: 0 130px;
+  width: 100%;
+}
+.desktop-5 .frame-8 {
+  align-items: flex-start;
+  background-color: #89fac4;
+  display: flex;
+  height: 357px;
+  mix-blend-mode: normal;
+  padding: 11px 90px;
+  width: 100%;
+}
+.desktop-5 .iu-lgi9-pwetu {
+  height: 325px;
+  margin-left: 127px;
+  margin-top: 11.0px;
+  mix-blend-mode: normal;
+  object-fit: cover;
+  width: 545px;
+}
+.desktop-5 .span0 {
+  color: var(--scarlet);
+}
+.desktop-5 .span0-1 {
+  color: var(--black);
+}
+.desktop-5 .span1 {
+  color: var(--niagara);
+}
+.desktop-5 .span1-1 {
+  color: var(--black);
+  font-size: var(--font-size-m2);
+}
+.desktop-5 .span2 {
+  color: var(--cardinal);
+  font-family: var(--font-family-ropa_sans);
+  font-size: var(--font-size-l);
+}
+.desktop-5 .text-1 {
+  align-self: flex-end;
+  color: transparent;
+  font-family: var(--font-family-righteous);
+  font-size: var(--font-size-xs2);
+  letter-spacing: 0;
+  margin-top: 1px;
+  min-height: 240px;
+  min-width: 708px;
+  text-align: center;
+  width: 708px;
+}
+.desktop-5 .text-2 {
+  color: var(--scarlet);
+  font-family: var(--font-family-righteous);
+  font-size: var(--font-size-xs2);
+  letter-spacing: 0;
+  margin-top: 11px;
+  min-height: 207px;
+  min-width: 632px;
+  mix-blend-mode: normal;
+  text-align: center;
+  width: 632px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
+
+}
+
+@media screen and (max-width:762px){
+ :root {
+  --black: rgba(0, 0, 0, 1);
+  --niagara: rgba(14, 163, 130, 1);
+  --persian-blue: rgba(22, 48, 187, 1);
+  --new-car: rgba(26, 67, 213, 1);
+  --aquamarine: rgba(137, 250, 196, 1);
+  --cardinal: rgba(205, 32, 50, 1);
+  --alizarin-crimson: rgba(229, 23, 23, 1);
+  --orange-red: rgba(239, 27, 27, 1);
+  --scarlet: rgba(248, 18, 18, 1);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-xxs: 8px;
+  --font-size-xs: 12px;
+  --font-size-xs: 13px;
+  --font-size-s: 18px;
+  --font-size-l: 26px;
+  --font-size-l: 32px;
+  --font-size-xl: 64px;
+  --font-size-m2: 24px;
+  --font-size-l2: 48px;
+  --font-size-l2: 56px;
+  --font-size-xs2: 30px;
+  --font-size-m22: 36px;
+  --font-size-xl2: 40px;
+  --font-size-xxs2: 10px;
+  --font-size-xxl2: 72px;
+  --font-size-xxs2: 9px;
+  --font-size-xxxl2: 144px;
+  --font-size-xxl22: 96px;
+
+  --font-family-ribeye: "Ribeye";
+  --font-family-ribeye-regular: "Ribeye-Regular";
+  --font-family-ribeye_marrow: "Ribeye Marrow";
+  --font-family-righteous: "Righteous";
+  --font-family-roboto: "Roboto";
+  --font-family-roboto-regular: "Roboto-Regular";
+  --font-family-roboto_mono: "Roboto Mono";
+  --font-family-roboto_mono-regular: "Roboto Mono-Regular";
+  --font-family-ropa_sans: "Ropa Sans";
+  --font-family-rowdies: "Rowdies";
+  --font-family-ruda: "Ruda";
+  --font-family-ruthie: "Ruthie";
+  --font-family-ruthie-regular: "Ruthie-Regular";
+}
+.ribeyemarrow-normal-black-40px {
+  color: var(--black);
+  font-family: var(--font-family-ribeye_marrow);
+  font-size: var(--font-size-xl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.border-1px-black {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--black);
+}
+.ruthie-regular-normal-orange-red-36px {
+  color: var(--orange-red);
+  font-family: var(--font-family-ruthie-regular);
+  font-size: var(--font-size-m22);
+  font-weight: 400;
+  font-style: normal;
+}
+.ruthie-normal-black-72px {
+  color: var(--black);
+  font-family: var(--font-family-ruthie);
+  font-size: var(--font-size-xxl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.ribeyemarrow-normal-scarlet-40px {
+  color: var(--scarlet);
+  font-family: var(--font-family-ribeye_marrow);
+  font-size: var(--font-size-xl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.ribeyemarrow-normal-white-40px {
+  font-family: var(--font-family-ribeye_marrow);
+  font-size: var(--font-size-xl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.robotomono-regular-normal-orange-red-24px {
+  color: var(--orange-red);
+  font-family: var(--font-family-roboto_mono-regular);
+  font-size: var(--font-size-m2);
+  font-weight: 400;
+  font-style: normal;
+}
+.ruthie-normal-orange-red-36px {
+  color: var(--orange-red);
+  font-family: var(--font-family-ruthie);
+  font-size: var(--font-size-m22);
+  font-weight: 400;
+  font-style: normal;
+}
+.ruthie-regular-normal-black-72px {
+  color: var(--black);
+  font-family: var(--font-family-ruthie-regular);
+  font-size: var(--font-size-xxl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.robotomono-normal-orange-red-24px {
+  color: var(--orange-red);
+  font-family: var(--font-family-roboto_mono);
+  font-size: var(--font-size-m2);
+  font-weight: 400;
+  font-style: normal;
+}
+.roboto-bold-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  font-style: normal;
+}
+.ruthie-normal-black-96px {
+  color: var(--black);
+  font-family: var(--font-family-ruthie);
+  font-size: var(--font-size-xxl22);
+  font-weight: 400;
+  font-style: normal;
+}
+.ruthie-normal-orange-red-40px {
+  color: var(--orange-red);
+  font-family: var(--font-family-ruthie);
+  font-size: var(--font-size-xl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.border-2px-black {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--black);
+}
 
 .android-7 {
   align-items: flex-start;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  height: 890px;
+  height: 854px;
   mix-blend-mode: normal;
   overflow: hidden;
   padding: 54px 0;
@@ -463,7 +487,6 @@
 }
 .android-7 .about-us {
   height: 32px;
-  margin-top: 6.0px;
   width: 178px;
 }
 .android-7 .blog {
@@ -476,7 +499,7 @@
   position: absolute;
   text-align: center;
   text-decoration: underline;
-  top: 14px;
+  top: 7px;
   width: 127px;
 }
 .android-7 .career-vision {
@@ -493,14 +516,14 @@
 }
 .android-7 .componentlottie-30fb7nbt3mjson {
   height: 46px;
-  margin-left: 10px;
+  margin-left: 1px;
   mix-blend-mode: normal;
   object-fit: cover;
   width: 89px;
 }
 .android-7 .componentlottie-f20e8-sg3jjson {
-  height: 79px;
-  left: 125px;
+  height: 65px;
+  left: 120px;
   mix-blend-mode: normal;
   object-fit: cover;
   position: absolute;
@@ -508,11 +531,11 @@
   width: 48px;
 }
 .android-7 .componentlottie-f30t9-ufaijson {
-  height: 134px;
-  margin-left: 8px;
+  height: 142px;
+  margin-left: 4px;
   mix-blend-mode: normal;
   object-fit: cover;
-  width: 185px;
+  width: 193px;
 }
 .android-7 .componentlottie-lf20iv2a7ojson {
   height: 151px;
@@ -521,64 +544,66 @@
   width: 135px;
 }
 .android-7 .flex-row {
-  align-items: center;
-  align-self: center;
+  align-items: flex-start;
   display: flex;
-  margin-left: 11.0px;
-  margin-top: 24px;
-  min-width: 322px;
+  height: 157px;
+  margin-top: 7px;
+  min-width: 335px;
 }
 .android-7 .flex-row-1 {
   align-items: center;
   display: flex;
-  min-width: 277px;
+  min-width: 268px;
 }
 .android-7 .flex-row-2 {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
-  height: 157px;
-  min-width: 331px;
+  margin-right: 4px;
+  margin-top: 21px;
+  min-width: 322px;
 }
 .android-7 .frame-7 {
   align-items: flex-end;
+  background-color: #e98989a1;
   display: flex;
   flex-direction: column;
   height: 303px;
-  margin-left: -1px;
-  margin-top: 16px;
-  padding: 18px 0;
+  margin-top: 30px;
+  mix-blend-mode: normal;
+  padding: 21px 10px;
   width: 100%;
 }
 .android-7 .frame-8 {
   align-items: flex-end;
+  background-color: var(--aquamarine);
   display: flex;
   flex-direction: column;
   height: 290px;
-  margin-left: -1px;
-  margin-top: 44px;
-  padding: 5px 8px;
+  margin-left: 1px;
+  mix-blend-mode: normal;
+  padding: 12px 5px;
   width: 100%;
 }
 .android-7 .iu-lgi9-pwetu {
-  height: 136px;
-  left: 212px;
+  height: 144px;
+  left: 208px;
   mix-blend-mode: normal;
   object-fit: cover;
   position: absolute;
   top: 0;
-  width: 126px;
+  width: 134px;
 }
 .android-7 .overlap-group {
   height: 153px;
   position: relative;
-  width: 338px;
+  width: 342px;
 }
 .android-7 .overlap-group1 {
   align-self: center;
-  height: 79px;
-  margin-left: 20.0px;
+  height: 65px;
+  margin-left: 14.0px;
   position: relative;
-  width: 173px;
+  width: 168px;
 }
 .android-7 .span0 {
   color: var(--black);
@@ -587,16 +612,16 @@
   color: var(--scarlet);
 }
 .android-7 .span1 {
-  color: var(--niagara);
-}
-.android-7 .span1-1 {
   color: var(--cardinal);
   font-family: var(--font-family-ropa_sans);
+}
+.android-7 .span1-1 {
+  color: var(--niagara);
 }
 .android-7 .text-1 {
   color: transparent;
   font-family: var(--font-family-righteous);
-  font-size: var(--font-size-xxs);
+  font-size: var(--font-size-xxs2);
   letter-spacing: 0;
   margin-left: 18px;
   margin-top: 1.0px;
@@ -638,7 +663,6 @@
   text-decoration: none;
   display: contents;
 }
-
 
 }
           *{
@@ -857,7 +881,7 @@ body {
   font-size:50px;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:762px){
   .assign1{
     display:none;
   }
@@ -866,7 +890,7 @@ body {
   }
 }
 
-@media screen and (min-width:480px){
+@media screen and (min-width:762px){
   .assign1{
     display:block;
   }
@@ -878,23 +902,23 @@ body {
         </head>
     <body>
       {{>navbar}} 
-      <div class="container-center-horizontal assign1">
+<div class="container-center-horizontal assign1">
   <div class="desktop-5 screen">
     <div class="flex-row-1">
       <h1 class="career-vision">
-        <span class="span0-1">Career <br /></span><span class="span1-1">Vision</span>
+        <span class="span0">Career <br /></span><span class="span1">Vision</span>
       </h1>
       <img
         class="iu-lgi9-pwetu"
         src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/iulgi9pwetu@1x.png"
       />
     </div>
-    <div class="frame-7">
+    <div class="frame-7 border-2px-black">
       <img
         class="componentlottie-lf20iv2a7ojson"
         src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets4-lottiefiles-com-packages-lf20-@2x.png"
       />
-      <div class="flex-col">
+      <div class="flex-col-1">
         <div class="flex-row">
           <img
             class="about-us"
@@ -906,16 +930,16 @@ body {
           />
         </div>
         <div class="text-1">
-          <span class="span0"
+          <span class="span0-1"
             >Our platform is designed to guide students to <br />choose their next step in building their career
             <br />without depending on other interests. <br /></span
-          ><span class="span1"><br /></span
+          ><span class="span1-1"><br /></span
           ><span class="span2">Help the students about various professions <br />based upon interested subject.</span>
         </div>
       </div>
     </div>
-    <div class="frame-8">
-      <div class="flex-col-1">
+    <div class="frame-8 border-2px-black">
+      <div class="flex-col">
         <div class="blog">BLOG</div>
         <div class="text-2">
           share your experience and <br />thoughts to the unknown juniors <br />of your such that they will <br />know
@@ -943,10 +967,10 @@ body {
         src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/iulgi9pwetu@2x.png"
       />
       <h1 class="career-vision">
-        <span class="span0-1">Career <br /></span><span class="span1">Vision</span>
+        <span class="span0-1">Career <br /></span><span class="span1-1">Vision</span>
       </h1>
     </div>
-    <div class="frame-7">
+    <div class="frame-7 border-2px-black">
       <div class="flex-row-1">
         <img
           class="about-us"
@@ -957,20 +981,24 @@ body {
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets8-lottiefiles-com-private-files-@2x.png"
         />
       </div>
-      <div class="flex-row">
+      <div class="flex-row-2">
         <img
           class="componentlottie-lf20iv2a7ojson"
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets4-lottiefiles-com-packages-lf20-@2x.png"
         />
         <p class="text-1">
           <span class="span0"
-            >Our platform is designed to guide students to <br />choose their next step in building their career
-            <br />without depending on other interests. <br /><br /></span
-          ><span class="span1-1">Help the students about various professions <br />based upon interested subject.</span>
+            >Our platform is designed<br />
+            to guide students to <br />choose their next step in <br />building their career <br />without depending on
+            other interests. <br /><br /></span
+          ><span class="span1"
+            >Help the students about various<br />
+            professions <br />based upon interested subject.</span
+          >
         </p>
       </div>
     </div>
-    <div class="frame-8">
+    <div class="frame-8 border-2px-black">
       <div class="overlap-group1">
         <div class="blog">BLOG</div>
         <img
@@ -978,10 +1006,13 @@ body {
           src="https://anima-uploads.s3.amazonaws.com/projects/60c0df29c445eb8477e3598a/img/-component-lottie-https---assets9-lottiefiles-com-packages-lf20-@2x.png"
         />
       </div>
-      <div class="flex-row-2">
+      <div class="flex-row">
         <p class="text-2">
-          share your experience and <br />thoughts to the unknown juniors <br />of your such that they will <br />know
-          about the real faces of the <br />society
+          share your experience<br />
+          and thoughts to the<br />
+          unknown juniors <br />of your such that<br />
+          they will <br />know about the real<br />
+          faces of the society
         </p>
         <img
           class="componentlottie-f30t9-ufaijson"
@@ -992,32 +1023,35 @@ body {
   </div>
 </div>
 
-
  <figure class="icon-cards xy mt-3">
   <div class="icon-cards__content">
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
+      <img class="imagex border-0" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
       <span class="a">
-        <h1 class="text-primary text-center">Welcome</h1>
-        <p class="text-danger text-center">to</p>
-        <h1 class="text-primary text-center">Career Vision</h1>
+        <h1 class="text-primary text-center">KickStart</h1>
+        <p class="text-danger text-center">your</p>
+        <h1 class="text-primary text-center">Journey</h1>
         </span>
     </div>
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex" src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" >
+      <img class="imagex border-0" src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" >
       <span class="a">
-        <p class="text-info">Let's start the Funride</p>
+        <p class="text-danger">Quickly Login to have fun</p>
         <a href="/login" class="btn btn-primary">Login</a>
       </span>
      </div>
     <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex" src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" >
+      <img class="imagex border-0" src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" >
    <span class="a">
-        <p class="text-dark">No more doubts about future??</p>
+        <p class="text-dark">No more doubts about future?? Register first</p>
         <a href="/register" class="btn btn-info">Register</a>
       </span>
    </div>
   </div>
 </figure>
+
+<footer class="text-dark footer">
+  <h4 class="text-center">@Gain some knowledge</h4>
+</footer>
          </body>
 </html>
