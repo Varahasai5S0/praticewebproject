@@ -10,8 +10,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const auth = require("./middleware/auth");
-const author = require("./middleware/author");
 const poss = require("./middleware/poss");
+const author = require("./middleware/author");
 require("./db/conn");
 
 const Register = require("./models/user");
@@ -34,7 +34,12 @@ app.set("views", template_path);
 hbs.registerPartials(partial_path);
 
 app.get('/', author, (req, res) => {
-    //res.render('index');
+    if (req.user) {
+        res.render('secret');
+    } else {
+        console.log(req.user);
+        res.render('index');
+    }
 });
 
 
@@ -101,11 +106,14 @@ app.post('/courses', async(req, res) => {
 
 app.get('/logout', auth, async(req, res) => {
     try {
-        //delete token from datbase
+        //delete token from database
 
-        req.user.tokens = req.user.tokens.filter((currElement) => {
+        /*req.user.tokens = req.user.tokens.filter((currElement) => {
             return currElement.token !== req.token;
-        })
+        })*/
+
+        //delete token from datbase 
+        req.user.tokens = []
 
         res.clearCookie("jwt");
         console.log('logout done');
@@ -134,7 +142,7 @@ app.post('/register', async(req, res) => {
             //cookies
 
             res.cookie("jwt", token, {
-                expires: new Date(Date.now() + 3000000000),
+                expires: new Date(Date.now() + 300000000),
                 httpOnly: true
             });
 
@@ -174,13 +182,15 @@ app.post('/login', async(req, res) => {
 
         const isMatch = await bcrypt.compare(password, useremail.password);
 
-        const token = await useremail.generateAuthToken();
+        if (isMatch) {
+            const token = await useremail.generateAuthToken();
 
-        res.cookie("jwt", token, {
-            expires: new Date(Date.now() + 3000000000),
-            httpOnly: true,
-            //secure: true
-        });
+            res.cookie("jwt", token, {
+                expires: new Date(Date.now() + 3000000000),
+                httpOnly: true,
+                //secure: true
+            });
+        }
 
 
 
