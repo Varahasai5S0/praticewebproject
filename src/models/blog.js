@@ -43,6 +43,13 @@ const blogSchema = new mongoose.Schema({
         },
         user: {
             type: String
+        },
+        usermail: {
+            type: String
+        },
+        time: {
+            type: Date,
+            default: Date.now
         }
     }]
 

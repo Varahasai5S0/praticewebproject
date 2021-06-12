@@ -33,6 +33,10 @@ app.set("view engine", "hbs");
 app.set("views", template_path);
 hbs.registerPartials(partial_path);
 
+hbs.registerHelper('loud', function(aString) {
+    return aString.toLocaleString()
+})
+
 app.get('/', author, (req, res) => {
     if (req.user) {
         res.render('secret');

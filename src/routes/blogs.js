@@ -45,12 +45,13 @@ router.get('/:slug', async(req, res) => {
     res.render("showblog", { post: act });
 })
 
-router.post('/check/:slug', poss, async(req, res) => {
+router.post('/comment/:slug', poss, async(req, res) => {
     try {
         const article = await blogdata.findOne({ slug: req.params.slug });
         const add = req.body.comm;
         const user = req.user.firstname;
-        article.comments = article.comments.concat({ comment: add, user: user });
+        const usermail = req.user.email;
+        article.comments = article.comments.concat({ comment: add, user: user, usermail: usermail });
         article.save();
         res.render("showblog", { post: article })
     } catch (e) {
@@ -66,7 +67,7 @@ router.get('/article/my', poss, async(req, res) => {
         res.status(400).redirect('/404error');
     }
 })
-router.delete('/:id', async(req, res) => {
+router.delete('/delete/:id', async(req, res) => {
     await blogdata.findByIdAndDelete(req.params.id)
     res.redirect('/blog/article/my')
 })

@@ -77,13 +77,15 @@ button.btn {
     </head>
     <body>
         {{>header}}
+        <div class="container px-3 pt-2">
+          <a href="/blog/" class="btn btn-info">All Articles<i class="fas fa-feather"></i></a>      
+             
+                <a href="/blog/article/my/" class="btn btn-info">My Articles<i class="fas fa-feather"></i></a>      
+                <h1 class="text-center font-weight-bold art">New Blog<i class="fas fa-marker"></i></h1>
+
+</div>
 <div class="form4 cax my-4">
     <div class="container-fluid">
-          <h1 class="text-primary">New Blog/
-        <span>
-          <a href="/blog" class="text-danger">All Articles</a>
-        </span>
-      </h1>
         <div class="row">
             <div class="col-md-7 col-md-offset-2">
                 <div class="form-bg">
@@ -107,6 +109,7 @@ button.btn {
         </div>
     </div>
 </div>
+ {{>footer}}
 <script>
     var textarea = document.getElementById("textarea");
 var limit = 250;

@@ -30,9 +30,8 @@ a {
 .logo {
     margin: 0;
     color: white;
-    font-size: 2.3em;
+    font-size: 1.7rem;
     font-family: "Comic Sans MS", cursive;
-    padding-left: 7%;
 }
 
 .main-nav {
@@ -59,10 +58,9 @@ a {
 
 .footer {
     border: 1px solid #a2a2a2;
-    background: linear-gradient(135deg, red, orange);
     padding-top: .5em;
-    padding-bottom: .5em;
     width: 100%;
+    margin-top: .5em;
 }
 
 .header {
@@ -111,8 +109,38 @@ a {
 }
 
 .im {
-    border-radius: 14px;
-    height: 60px;
-    width: 90px;
+    border-radius: 8px;
     box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (min-width:480px) {
+    .art {
+        font-size: 6rem;
+        font-family: 'Charmonman';
+        color: red;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .art {
+        font-size: 3rem;
+        font-family: 'Charmonman';
+        color: red;
+    }
+}
+
+@media screen and (min-width:480px) {
+    .morn {
+        font-size: 4rem;
+        font-family: 'Rochester';
+        color: #172a74;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .morn {
+        font-size: 2rem;
+        font-family: 'Rochester';
+        color: #172a74;
+    }
 }
