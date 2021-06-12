@@ -11,6 +11,7 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 ul {
@@ -135,6 +136,11 @@ a {
         font-family: 'Rochester';
         color: #172a74;
     }
+    .he {
+        font-size: 4rem;
+        font-family: 'Ruthie';
+        color: #ff9900;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -142,5 +148,10 @@ a {
         font-size: 2rem;
         font-family: 'Rochester';
         color: #172a74;
+    }
+    .he {
+        font-size: 2rem;
+        font-family: 'Ruthie';
+        color: #ff9900;
     }
 }

@@ -37,9 +37,10 @@ hbs.registerHelper('loud', function(aString) {
     return aString.toLocaleString()
 })
 
-app.get('/', author, (req, res) => {
+app.get('/', author, async(req, res) => {
     if (req.user) {
-        res.render('secret');
+        const articles = await Coursedata.find();
+        res.render("secret", { post: articles });
     } else {
         console.log(req.user);
         res.render('index');
@@ -57,14 +58,14 @@ app.post('/secret', async(req, res) => {
     try {
         let cb = req.body.subjectName;
         let co = req.body.courseName;
-        if (req.body.yesno == 1) {
+        if (req.body.no == '') {
             const act = await Coursedata.find({ subject: cb });
             if (act.length > 0) {
                 res.render("listcourse", { post: act });
             } else {
                 res.redirect('/secret');
             }
-        } else if (req.body.yesno == 2) {
+        } else if (req.body.yes == '') {
             const act = await Coursedata.find({ title: co });
             if (act.length > 0) {
                 res.render("listcourse", { post: act });
@@ -306,7 +307,7 @@ app.get('/autocomplete1/', function(req, res, next) {
 
 });
 
-app.get('/contact', async(req, res) => {
+app.get('/contact', auth, async(req, res) => {
     try {
         res.render("contact");
     } catch (e) {
@@ -334,7 +335,7 @@ app.get('/404error', (req, res) => {
     res.render('404error');
 })
 
-app.get('/blog', async(req, res) => {
+app.get('/blog', auth, async(req, res) => {
     try {
         const getMens = await Blogdata.find({}).sort({ createdAt: 'desc' });;
         res.render("blogarticles", { post: getMens })
