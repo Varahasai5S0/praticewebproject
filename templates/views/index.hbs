@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      
         {{>link}}
         <style>
            @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
@@ -901,7 +902,46 @@ body {
         </style>
         </head>
     <body>
-      {{>navbar}} 
+      {{#if post}}
+      {{>navbar}}
+      {{else}}
+      {{>header}}
+      {{/if}}
+{{#if post}}
+<figure class="icon-cards xy mt-3">
+  <div class="icon-cards__content">
+    <div class="icon-cards__item d-flex align-items-center justify-content-center">
+      <img class="border-0" style="height: min-content;" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
+      <span class="a">
+        <img src="https://imgur.com/DDNucdQ.png" class="h-75 w-50 mx-5 border-0">
+       
+         <h1 class=" my-3 font-weight-bold he text-center">Career Vision</h1>
+
+          <h1 class="text-primary text-center">Kickstart your</h1>
+        <h1 class="text-info text-center">journey.</h1>
+         
+
+        </span>
+    </div>
+    <div class="icon-cards__item d-flex align-items-center justify-content-center">
+      <img class="border-0" style="height:min-content;" src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" >
+      <span class="a">
+        <h1 class="text-white">Quickly Login to have fun...</h1>
+        <a href="/login" class="btn btn-primary">Login</a>
+      </span>
+     </div>
+    <div class="icon-cards__item d-flex align-items-center justify-content-center">
+      <img class="border-0" style="height: min-content;" src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" >
+   <span class="a">
+        <h1class="text-dark">No more doubts about future?? Register first</h1><br>
+        <a href="/register" class="btn btn-info">Register</a>
+      </span>
+   </div>
+  </div>
+</figure>
+
+{{else}}
+
 <div class="container-center-horizontal assign1">
   <div class="desktop-5 screen">
     <div class="flex-row-1">
@@ -1022,34 +1062,7 @@ body {
     </div>
   </div>
 </div>
-
- <figure class="icon-cards xy mt-3">
-  <div class="icon-cards__content">
-    <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex border-0" src="https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" >
-      <span class="a">
-        <h1 class="text-primary text-center">KickStart</h1>
-        <p class="text-danger text-center">your</p>
-        <h1 class="text-primary text-center">Journey</h1>
-        </span>
-    </div>
-    <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex border-0" src="https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ" >
-      <span class="a">
-        <p class="text-danger">Quickly Login to have fun</p>
-        <a href="/login" class="btn btn-primary">Login</a>
-      </span>
-     </div>
-    <div class="icon-cards__item d-flex align-items-center justify-content-center">
-      <img class="imagex border-0" src="https://i.picsum.photos/id/1001/5616/3744.jpg?hmac=38lkvX7tHXmlNbI0HzZbtkJ6_wpWyqvkX4Ty6vYElZE" >
-   <span class="a">
-        <p class="text-dark">No more doubts about future?? Register first</p>
-        <a href="/register" class="btn btn-info">Register</a>
-      </span>
-   </div>
-  </div>
-</figure>
-
+{{/if}}
 {{>footer}}
          </body>
 </html>

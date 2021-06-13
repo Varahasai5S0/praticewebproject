@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const mongoose = require("mongoose");
 const hbs = require("hbs");
+const favicon = require('serve-favicon');
 const methodOverride = require('method-override');
 const path = require("path");
 const port = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ const cookieParser = require("cookie-parser");
 const auth = require("./middleware/auth");
 const poss = require("./middleware/poss");
 const author = require("./middleware/author");
+const createError = require("http-errors");
 require("./db/conn");
 
 const Register = require("./models/user");
@@ -22,28 +24,32 @@ const Contactuser = require("./models/contacts");
 const static_path = path.join(__dirname, "../public");
 const template_path = path.join(__dirname, "../templates/views");
 const partial_path = path.join(__dirname, "../templates/partials");
+const image_path = path.join(__dirname, "../public/favicon.png");
 
 const blogrouter = require("./routes/blogs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser())
 app.use(methodOverride('_method'));
 app.use(express.static(static_path));
 app.set("view engine", "hbs");
 app.set("views", template_path);
 hbs.registerPartials(partial_path);
 
+app.use(favicon(__dirname + '/../public/favicon.png'));
+
 hbs.registerHelper('loud', function(aString) {
     return aString.toLocaleString()
 })
 
+
+
 app.get('/', author, async(req, res) => {
     if (req.user) {
-        const articles = await Coursedata.find();
-        res.render("secret", { post: articles });
+        res.render("index", { post: "" });
     } else {
         console.log(req.user);
-        res.render('index');
+        res.render('index', { post: 'navbar' });
     }
 });
 
