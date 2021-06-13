@@ -61,16 +61,16 @@ app.post('/secret', async(req, res) => {
         if (req.body.no == '') {
             const act = await Coursedata.find({ subject: cb });
             if (act.length > 0) {
-                res.render("listcourse", { post: act });
+                res.render("listcourse", { post: act, std: '' });
             } else {
-                res.redirect('/secret');
+                res.render('listcourse', { post: act, std: 'No courses available' });
             }
         } else if (req.body.yes == '') {
             const act = await Coursedata.find({ title: co });
             if (act.length > 0) {
-                res.render("listcourse", { post: act });
+                res.render("listcourse", { post: act, std: '' });
             } else {
-                res.redirect('/secret');
+                res.render('listcourse', { post: act, std: 'No courses available' });
             }
         } else {
             res.redirect('/secret');

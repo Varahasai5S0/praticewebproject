@@ -265,9 +265,16 @@ a, a:hover {
     </head>
     <body>
         {{>header}}
-        <div class="container">
-          <img src="https://images.unsplash.com/photo-1620503580973-fd9a09337739?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y291cnNlc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" >
-        </div>
+        <div class="container-horizontal dark mt-2">
+            <h1 class="text-center font-weight-bold art1 pt-4">Searched Courses<i class='fas fa-shield-alt'></i></h1>
+            <p class="text-center text-white" style="font-family:'Princess Sofia';font-size:1.3rem">We create our reality<br>
+            from our daily choices <br>
+            <span class="text-center" style="color:cyan;font-family:'Rochester';font-size:1.8rem">The World consists of billions of Realities
+            </span></p>
+            <a href="/secret/" class="btn btn-info mx-5"><i class="fas fa-arrow-left"></i>Back to home<i class="fas fa-feather"></i></a>      
+
+          </div>
+        
         <div class="dark">
             {{#each post}}
 	<main class="container py-4">
@@ -283,6 +290,13 @@ a, a:hover {
 		
 	</main>
     {{/each}}
+    {{#if std}}
+        <main class="container py-4">
+          	<div class="postcard__text">
+              <h4 class="text-center">{{std}}</h4>
+            </div>
+        </main>
+    {{/if}}
 </div>
  {{>footer}}
     </body>

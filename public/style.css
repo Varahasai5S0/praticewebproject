@@ -120,6 +120,11 @@ a {
         font-family: 'Charmonman';
         color: red;
     }
+    .art1 {
+        font-size: 5rem;
+        font-family: 'Charmonman';
+        color: white;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -127,6 +132,11 @@ a {
         font-size: 3rem;
         font-family: 'Charmonman';
         color: red;
+    }
+    .art1 {
+        font-size: 2.2rem;
+        font-family: 'Charmonman';
+        color: white;
     }
 }
 
@@ -137,7 +147,7 @@ a {
         color: #172a74;
     }
     .he {
-        font-size: 4rem;
+        font-size: 5rem;
         font-family: 'Ruthie';
         color: #ff9900;
     }
@@ -150,7 +160,7 @@ a {
         color: #172a74;
     }
     .he {
-        font-size: 2rem;
+        font-size: 3rem;
         font-family: 'Ruthie';
         color: #ff9900;
     }
