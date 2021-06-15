@@ -92,11 +92,12 @@
                  </div>
              </div>
          </div>
-         <div class="card-footer bg-white px-3 ">
+         <div class="card-footer bg-white px-1 ">
              <div class="row">
                  <div class="col-md-auto ">
-                   <form action="/blog/delete/{{this.id}}?_method=DELETE" method="POST">
-                     <a href="/blog/{{this.slug}}">Read more <i class='fas fa-terminal'></i></a>
+                   <form action="/blog/delete/{{this.id}}?_method=DELETE"  onsubmit="return submitForm(this);" method="POST">
+                     <a href="/blog/{{this.slug}}">Read <i class='fas fa-terminal'></i></a>
+                    <span class="ml-3 text-danger"><i class="fas fa-heart"></i>{{this.likes}}</span>
                     <a class="pl-1" href="/blog/edit/{{this.id}}">Edit <i class='fas fa-terminal'></i></a>
                    
                 <button type="submit" class="btn btn-link">Delete <i class='fas fa-terminal'></i></button>
@@ -108,5 +109,10 @@
      {{/each}}
  </div>
  {{>footer}}
+ <script>
+     function submitForm() {
+  return confirm('Do you really want to delete the blog?');
+}
+ </script>
     </body>
 </html>

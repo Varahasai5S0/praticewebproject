@@ -227,8 +227,9 @@ body {
      <div class="card mt-3 border-5 pt-2 active pb-0 px-1">
          <div class="card-body quote-card blue">
              <div class="row">
+              
                  <div class="col-12 ">
-                     <h1 class="text-center font-weight-bold morn">{{post.title}}</h1>
+                     <h1 id="hello" name="hello" class="text-center font-weight-bold morn">{{post.title}}</h1>
                  </div>
                  <div class="col">
                      <h5 class="card-subtitle">
@@ -238,11 +239,17 @@ body {
                        {{{post.sanitizedHtml}}}
                        
                    </p>
-                   <p>
+                   <span>LIKE
+                     <button id="ax" class="btn btn-link text-danger"><i class="fas fa-heart"></i></button>
+                    <span id="demo">{{post.likes}}</span>
+                   </span>
+                   
+                   
+                   <span class="ml-2">
                      <i class="fas fa-pencil-alt"></i>
                      <i class="fas fa-pencil-alt"></i>
                      <i class="fas fa-pencil-alt"></i>
-                   </p>
+                   </span>
                  </div>
              </div>
          </div>
@@ -253,14 +260,20 @@ body {
            <h1 class="font-weight-bold text-light">Comments<i class="fas fa-comment"></i></h1> 
 	<div class="row">
 	    <div class="container">
-            {{#each post.comments}}
+            {{#each comments}}
             <blockquote class="quote-card">
               <p>
                 {{this.comment}} 
               </p>
               <cite>
-               <span><i class="fas fa-at"></i>{{this.user}}</span>
-               <span><i class="fas fa-paragraph"></i>commented at {{loud this.time}}</span>
+                <span>
+                    <form action="/blog/comments/delete/{{this.id}}?_method=DELETE"  onsubmit="return submitForm(this);" method="POST">
+                      <button type="submit"  class="btn btn-link">delete</button>
+                      <span name="hello"><i class="fas fa-at"></i>{{this.user}}</span>
+               <span><i class="fas fa-paragraph"></i>{{loud this.time}}</span>
+                   </form>
+                </span>
+               
               </cite>
             </blockquote>
             {{/each}}
@@ -275,5 +288,34 @@ body {
   </div>
     </div>
      {{>footer}}
+     <script>
+     function submitForm() {
+  return confirm('Do you really want to delete the comment?');
+}
+</script>
+     <script>
+       $(document).ready(function(){
+        $('#ax').on('click',function(){
+            var a=document.getElementById("demo").innerText;
+            var b= parseInt(a)+1;
+           var c= document.getElementById("hello").innerText;
+            $.ajax({
+                url:"/likesadd/",
+                type:"GET",
+                data:{
+                    'abc': c,
+                     'likes':b,
+                    },
+                success: function(response){ 
+                    if(response){
+                        document.getElementById("demo").innerHTML =response;
+                        document.getElementById("ax").disabled = true;
+                    }
+                }
+
+            })
+        })
+    })
+     </script>
     </body>
 </html>

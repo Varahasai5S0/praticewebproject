@@ -237,6 +237,19 @@ app.get('/titlecheck', async(req, res, next) => {
     }
 })
 
+app.get('/likesadd/', async(req, res, next) => {
+    const a = req.query.abc;
+    const b = req.query.likes;
+    const at = await Blogdata.findOne({ title: a });
+    at.likes = b;
+    await at.save();
+    if (at != null) {
+        res.send(b);
+    } else {
+        res.send('');
+    }
+})
+
 app.get('/autocomplete/', function(req, res, next) {
     var regex = new RegExp(req.query["term"], "i");
     var employeeFilter = Coursedata.find({ title: regex }, { 'title': 1 }).sort({ "updated_at": -1 }).sort({ 'cretaed_at': -1 }).limit(20);

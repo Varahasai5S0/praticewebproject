@@ -2,6 +2,7 @@ const express = require("express")
 const blogdata = require("./../models/blog");
 const router = express.Router()
 const Register = require("./../models/user");
+const commentdata = require("./../models/comments");
 const poss = require("./../middleware/poss");
 
 router.get('/new', async(req, res) => {
@@ -28,11 +29,11 @@ router.post('/new', poss, async(req, res) => {
 
 router.post('/edit/:id', async(req, res) => {
     const article = await blogdata.findByIdAndUpdate({ _id: req.params.id });
-    article.title = req.body.title;
     article.description = req.body.description;
     article.markdown = req.body.markdown
     article.save();
-    res.render('showblog', { post: article });
+    const acts = await commentdata.find({ postslug: article.slug });
+    res.render('showblog', { post: article, comments: acts });
 })
 
 router.get('/edit/:id', async(req, res) => {
@@ -42,18 +43,22 @@ router.get('/edit/:id', async(req, res) => {
 
 router.get('/:slug', async(req, res) => {
     const act = await blogdata.findOne({ slug: req.params.slug });
-    res.render("showblog", { post: act });
+    const articles = await commentdata.find({ postslug: req.params.slug });
+    res.render("showblog", { post: act, comments: articles });
 })
 
 router.post('/comment/:slug', poss, async(req, res) => {
     try {
-        const article = await blogdata.findOne({ slug: req.params.slug });
-        const add = req.body.comm;
-        const user = req.user.firstname;
-        const usermail = req.user.email;
-        article.comments = article.comments.concat({ comment: add, user: user, usermail: usermail });
-        article.save();
-        res.render("showblog", { post: article })
+        const article = new commentdata({
+            comment: req.body.comm,
+            postslug: req.params.slug,
+            user: req.user.firstname,
+            usermail: req.user.email
+        });
+        await article.save();
+        const act = await blogdata.findOne({ slug: req.params.slug });
+        const articles = await commentdata.find({ postslug: req.params.slug });
+        res.render("showblog", { post: act, comments: articles })
     } catch (e) {
         res.redirect('/blog');
     }
@@ -72,6 +77,17 @@ router.delete('/delete/:id', async(req, res) => {
     res.redirect('/blog/article/my')
 })
 
+router.delete('/comments/delete/:id', poss, async(req, res) => {
+    const article = await commentdata.findById({ _id: req.params.id });
+    var postslug = article.postslug;
+    var userId = article.usermail;
+    if (req.user.email == userId) {
+        const article1 = await commentdata.findByIdAndDelete({ _id: req.params.id })
+    }
 
+    const act = await blogdata.findOne({ slug: postslug });
+    const comments = await commentdata.find({ postslug: postslug })
+    res.render("showblog", { post: act, comments: comments });
+})
 
 module.exports = router;

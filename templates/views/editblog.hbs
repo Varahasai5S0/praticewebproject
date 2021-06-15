@@ -87,10 +87,10 @@ button.btn {
         <div class="row">
             <div class="col-md-7 col-md-offset-2">
                 <div class="form-bg">
-                    <form class="form" action="/blog/edit/{{post.id}}" method="POST">
+                    <form class="form" action="/blog/edit/{{post.id}}" method="POST"  onsubmit="return submitForm(this);">
                         <div class="form-group"> 
                           <label>Title</label> 
-                          <input type="text" name="title" class="form-control" aria-required="true" id="title1" value={{post.title}} required> </div>
+                          <input type="text" name="title" class="form-control" aria-required="true" id="title1" value={{post.title}} readonly="readonly" required> </div>
                         <div class="form-group"> 
                           <label>Description</label> 
                           <input type="text" class="form-control" aria-required="true" id="emailNine" value={{post.description}} name="description" required> </div>
@@ -108,6 +108,11 @@ button.btn {
     </div>
 </div>
  {{>footer}}
+ <script>
+     function submitForm() {
+  return confirm('Do you really want to edit the blog?');
+}
+ </script>
 <script>
     var textarea = document.getElementById("textarea");
 var limit = 250;

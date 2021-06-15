@@ -37,21 +37,10 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    comments: [{
-        comment: {
-            type: String
-        },
-        user: {
-            type: String
-        },
-        usermail: {
-            type: String
-        },
-        time: {
-            type: Date,
-            default: Date.now
-        }
-    }]
+    likes: {
+        type: Number,
+        default: 0
+    }
 
 });
 
