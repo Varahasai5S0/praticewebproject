@@ -9,139 +9,95 @@ body {
   padding: 0;
   font-family: "Inter", sans-serif;
 }
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 2rem;
+        *{
+    font-family: 'Open Sans', sans-serif;
 }
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-[data-ripple] {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-effect {
-  position: absolute;
-  border-radius: 9999px;
-  animation: ripple-animation 2s;
-}
-
-@keyframes ripple-animation {
-  from {
-    transform: scale(1);
-    opacity: 0.4;
-  }
-  to {
-    transform: scale(100);
-    opacity: 0;
-  }
-}
-
-.aks-accordion {
-  width: 50%;
-  margin: 0 auto;
-}
-.aks-accordion-row {
-}
-.aks-accordion-item {
-  width: 100%;
-  border-bottom: 1px solid #e0e0e0;
-  padding-top: 20px;
-  padding-right: 5px;
-  padding-bottom: 12px;
-  padding-left: 5px;
-  cursor: pointer;
-}
-.aks-accordion-item-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.aks-accordion-item-icon {
-  width: 25px;
-  height: 25px;
-  background: #252525;
-  border-radius: 9999px;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-  text-align: center;
-}
-.aks-accordion-item-icon svg {
-  width: 15px;
-  fill: white;
-  margin: 0 auto;
-}
-.aks-accordion-item-title {
-  width: 90%;
-  text-align: left;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-}
-.aks-accordion-item-title h4 {
-  margin: 0;
-}
-.aks-accordion-item-content {
-  display: none;
-  width: 100%;
-  padding-top: 12px;
-  padding-right: 8px;
-  padding-bottom: 0;
-  padding-left: 42px;
-  overflow: hidden;
-  word-break: break-word;
-  width: 88%;
-  text-align: left;
-  line-height: 1.5;
-}
-
-.aks-accordion-item.opened .aks-accordion-item-icon-open {
-  display: none;
-}
-.aks-accordion-item-icon-close {
-  display: none;
-}
-.aks-accordion-item.opened .aks-accordion-item-icon-close {
-  display: block;
-}
-
-@media screen and (max-width: 500px) {
-  .aks-accordion {
+.toc-tab-box h2.acc-title {
+    color: #002d5b;
+    background: #FAFAFA;
+    padding: 30px 0px;
+    padding-left: 60px;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease;
     width: 100%;
-  }
-  .aks-accordion-item-content {
-    padding-left: 11px;
-    width: 92%;
-  }
+    float: left;
 }
+
+.toc-tab-box .acc-content {
+    background: #F3FAFD;
+    width: 100%;
+    margin-bottom: 4px;
+    float: left;
+    padding: 5px 30px 30px 60px;
+    color: #617693;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordionItemHeading .circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    float: left;
+    background: #122C5F;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.accordionItemHeading .circle span {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 300;
+    float: left;
+    display: block;
+    margin: 6px 11px;
+}
+
+.accordionItemHeading h4 {
+    color: #389AD8;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 15px 0px;
+}
+
+.quest .answer {
+    border-left: 1px solid #58ABDF;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 20px 10px 36px;
+}
+
+.acc-content .quest {
+    margin: 10px 0px;
+}
+
+@media (max-width: 768px) {
+    .toc-tab-box .acc-content{
+        padding:0px;
+    }
+
+}
+
 
         </style>
     </head>
     <body>
         {{>header}}
         <div>
-            <a href="/secret/" class="btn btn-info mx-5 mt-2"><i class="fas fa-arrow-left"></i>Back to home<i class="fas fa-feather"></i></a>      
+            <a href="/secret/" class="btn btn-info ml-4 mt-2"><i class="fas fa-arrow-left"></i>Back/home</a>      
 
         <h2 class="text-info text-center my-1 font-weight-bold he">{{post.title}}</h2>
         <h5 class="text-center font-weight-bold mb-1" style="font-family:'Almendra SC'">WISH FOR IT <br>
@@ -151,220 +107,79 @@ body {
         </h5>
         </div>
 
-         <div class='container my-4'>
-        <div class="text-muted mb-2">
-          <img src="{{post.imageurl}}">
-        </div>
-        <div class="text-muted mb-3">
-            {{post.description}}
-        </div>
+<div class="container">
         {{#each post.course}}
-            <div class="text-muted mb-3">
-                {{this.classname}}
-                {{this.classdescription}}
-                {{this.classlinks}}
+        <div class="toc-tab-box">
+            <h2 class="acc-title">{{this.classname}}</h2>
+
+            <div class="acc-content">
+               
+                <div class="col-md-12">
+                    <div>
+                      <div class="container">
+                        <p>{{this.classdescription}}</p>
+                      </div>
+                      {{#each this.jobs}}
+                        <div class="quest">
+                            <div class="accordionItemHeading">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="circle"><span><i class="fas fa-pencil-alt"></i></span></div>
+                                        </td>
+                                        <td>
+                                            <h4 class="">{{{this.jobtitle}}}</h4>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="answer"  style="display: none;">
+                                <p>{{this.jobdescription}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+
+                </div>
             </div>
-        {{/each}}
-
-
-    </div>
-    <div class="container">
-  <div class="aks-accordion" itemscope itemtype="https://schema.org/FAQPage" data-accordion="">
-    <h1>SSS Accordion and Google Schema</h1>
-    <div class="aks-accordion-row">
-      <div class="aks-accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-accordion-item="" data-ripple="#00000026">
-        <div class="aks-accordion-item-row">
-          <div class="aks-accordion-item-icon">
-            <svg class="aks-accordion-item-icon-open" viewBox="0 0 512 512">
-              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
-			v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" /></svg>
-            <svg class="aks-accordion-item-icon-close" viewBox="0 0 512 512">
-              <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
-
-          </div>
-          <div class="aks-accordion-item-title">
-            <h4 itemprop="name">What is the return policy?</h4>
-          </div>
+            
+              
         </div>
-        <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
-          <p itemprop="text">Most unopened items in new condition and returned within <strong>90 days</strong> will receive a refund or exchange. Some items have a modified return policy noted on the receipt or packing slip. Items that are opened or damaged or do not have a receipt may be denied a refund or exchange. Items purchased online or in-store may be returned to any store.
-            <br />
-            <p>Online purchases may be returned via a major parcel carrier. <a href="http://example.com/returns"> Click here </a> to initiate a return.</p>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="aks-accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-accordion-item="" data-ripple="#00000026">
-        <div class="aks-accordion-item-row">
-          <div class="aks-accordion-item-icon">
-            <svg class="aks-accordion-item-icon-open" viewBox="0 0 512 512">
-              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
-			v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" /></svg>
-            <svg class="aks-accordion-item-icon-close" viewBox="0 0 512 512">
-              <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
-
-          </div>
-          <div class="aks-accordion-item-title">
-            <h4 itemprop="name">How long does it take to process a refund?</h4>
-          </div>
-        </div>
-        <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
-          <p itemprop="text"> We will reimburse you for returned items in the same way you paid for them. For example, any amounts deducted from a gift card will be credited back to a gift card. For returns by mail, once we receive your return, we will process it within 4–5 business days. It may take up to 7 days after we process the return to reflect in your account, depending on your financial institution's processing time.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="aks-accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-accordion-item="" data-ripple="#00000026">
-        <div class="aks-accordion-item-row">
-          <div class="aks-accordion-item-icon">
-            <svg class="aks-accordion-item-icon-open" viewBox="0 0 512 512">
-              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
-			v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" /></svg>
-            <svg class="aks-accordion-item-icon-close" viewBox="0 0 512 512">
-              <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
-
-          </div>
-          <div class="aks-accordion-item-title">
-            <h4 itemprop="name">What is the policy for late/non-delivery of items ordered online?</h4>
-          </div>
-        </div>
-        <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
-          <p itemprop="text"> Our local teams work diligently to make sure that your order arrives on time, within our normal delivery hours of 9AM to 8PM in the recipient's time zone. During busy holiday periods like Christmas, Valentine's and Mother's Day, we may extend our delivery hours before 9AM and after 8PM to ensure that all gifts are delivered on time. If for any reason your gift does not arrive on time, our dedicated Customer Service agents will do everything they can to help successfully resolve your issue.
-            <br />
-            <p><a href="https://example.com/orders/">Click here</a> to complete the form with your order-related question(s).</p>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="aks-accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-accordion-item="" data-ripple="#00000026">
-        <div class="aks-accordion-item-row">
-          <div class="aks-accordion-item-icon">
-            <svg class="aks-accordion-item-icon-open" viewBox="0 0 512 512">
-              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
-			v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" /></svg>
-            <svg class="aks-accordion-item-icon-close" viewBox="0 0 512 512">
-              <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
-
-          </div>
-          <div class="aks-accordion-item-title">
-            <h4 itemprop="name">When will my credit card be charged?</h4>
-          </div>
-        </div>
-        <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
-          <p itemprop="text"> We'll attempt to securely charge your credit card at the point of purchase online. If there's a problem, you'll be notified on the spot and prompted to use another card. Once we receive verification of sufficient funds, your payment will be completed and transferred securely to us. Your account will be charged in 24 to 48 hours.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="aks-accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-accordion-item="" data-ripple="#00000026">
-        <div class="aks-accordion-item-row">
-          <div class="aks-accordion-item-icon">
-            <svg class="aks-accordion-item-icon-open" viewBox="0 0 512 512">
-              <path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216
-			v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" /></svg>
-            <svg class="aks-accordion-item-icon-close" viewBox="0 0 512 512">
-              <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z" /></svg>
-
-          </div>
-          <div class="aks-accordion-item-title">
-            <h4 itemprop="name">Will I be charged sales tax for online orders?</h4>
-          </div>
-        </div>
-        <div class="aks-accordion-item-content" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" data-accordion-content="">
-          <p itemprop="text"> Local and State sales tax will be collected if your recipient's mailing address is in:
-            <ul>
-              <li>Arizona</li>
-              <li>California</li>
-              <li>Colorado</li>
-            </ul>
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
+{{/each}}
 </div>
-<script>
-    $(document).ready(function(){
-(function () {
-  "use strict";
-  var jQueryPlugin = (window.jQueryPlugin = function (ident, func) {
-    return function (arg) {
-      if (this.length > 1) {
-        this.each(function () {
-          var $this = $(this);
 
-          if (!$this.data(ident)) {
-            $this.data(ident, func($this, arg));
-          }
-        });
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" >
+(function ($) {
 
-        return this;
-      } else if (this.length === 1) {
-        if (!this.data(ident)) {
-          this.data(ident, func(this, arg));
+    var allPanels = $('.accordion-section > .accordion-section-content, .toc-tab-box .acc-content, .toc-content.privacy-policy .acc-content').hide();
+    $('.accordion-section  .accordion-section-title, .toc-tab-box .acc-title, .toc-content.privacy-policy h2.acc-title, .acc-content .quest .accordionItemHeading h4').off().on('click', function (event) {
+        if (!$(this).hasClass('open')) {
+            allPanels.slideUp();
+            $(this).addClass('open');
+            $(this).next().slideDown();
+        } else {
+            allPanels.slideUp();
+            $(this).removeClass('open');
         }
-
-        return this.data(ident);
-      }
-    };
-  });
-})();
-
-(function () {
-  "use strict";
-  function Accordion($roots) {
-    var element = $roots;
-    var accordion = $roots.first("[data-accordion]");
-    var accordion_target = $roots.find("[data-accordion-item]");
-    var accordion_content = $roots.find("[data-accordion-content]");
-    $(accordion_target).click(function () {
-      $(this).toggleClass("opened");
-      $(this).find(accordion_content).slideToggle("slow");
-      $(this).siblings().find(accordion_content).slideUp("slow");
-      $(this).siblings().removeClass("opened");
     });
-  }
-  $.fn.Accordion = jQueryPlugin("Accordion", Accordion);
-  $("[data-accordion]").Accordion();
-
-  function Ripple_Button($root) {
-    var elements = $root;
-    var ripple_btn = $root.first("[data-ripple]");
-    $(ripple_btn).on("click", function (event) {
-      event.preventDefault();
-      var $div = $("<div/>"),
-        btnOffset = ripple_btn.offset(),
-        xPos = event.pageX - btnOffset.left,
-        yPos = event.pageY - btnOffset.top;
-      $div.addClass("ripple-effect");
-      $div.css({
-        height: ripple_btn.height(),
-        width: ripple_btn.height(),
-        top: yPos - $div.height() / 2,
-        left: xPos - $div.width() / 2,
-        background: ripple_btn.data("ripple") || "#ffffff26"
-      });
-      ripple_btn.append($div);
-
-      window.setTimeout(function () {
-        $div.remove();
-      }, 2000);
+    var insdeDivs = $('.acc-content .quest .answer').hide();
+    $('.acc-content .quest .accordionItemHeading h4').off().on('click', function (event) {
+        if (!$(this).hasClass('open')) {
+            insdeDivs.slideUp();
+            $(this).addClass('open');
+            $(this).parent().parent().parent().parent().parent().parent().find('.answer').slideDown();
+        } else {
+            insdeDivs.slideUp();
+            $(this).removeClass('open');
+        }
     });
-  }
-  $.fn.Ripple_Button = jQueryPlugin("Ripple_Button", Ripple_Button);
-  $("[data-ripple]").Ripple_Button();
-})();
-
-    })
+})(jQuery);
 </script>
-     {{>footer}}
+     
     </body>
 </html>
