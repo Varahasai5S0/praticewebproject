@@ -232,14 +232,15 @@ body {
                      <h1 id="hello" name="hello" class="text-center font-weight-bold morn">{{post.title}}</h1>
                  </div>
                  <div class="col">
-                     <h5 class="card-subtitle">
-                         Desc: {{post.description}}
-                   </h5>
-                   <p class="card-subtitle my-4 mx-2 text-dark">
+                     <h4 class="card-subtitle ml-1 font-weight-bold">
+                         Desc : {{post.description}}
+                   </h4>
+                   <div class="card-subtitle my-4 mx-2 text-dark">
                        {{{post.sanitizedHtml}}}
                        
-                   </p>
-                   <span>LIKE
+                   </div>
+                   <br>
+                   <span>Like
                      <button id="ax" class="btn btn-link text-danger"><i class="fas fa-heart"></i></button>
                     <span id="demo">{{post.likes}}</span>
                    </span>
@@ -255,22 +256,29 @@ body {
          </div>
         </div>
         </div>
-
         <div class="container mt-3">
            <h1 class="font-weight-bold text-light">Comments<i class="fas fa-comment"></i></h1> 
-	<div class="row">
+	{{#if message}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+       {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {{/if}}
+  <div class="row">
 	    <div class="container">
             {{#each comments}}
             <blockquote class="quote-card">
-              <p>
+              <div>
                 {{this.comment}} 
-              </p>
+              </div>
               <cite>
                 <span>
-                    <form action="/blog/comments/delete/{{this.id}}?_method=DELETE"  onsubmit="return submitForm(this);" method="POST">
+                    <form action="/blog/comments/delete/{{this.id}}?_method=DELETE" method="POST">
                       <button type="submit"  class="btn btn-link">delete</button>
                       <span name="hello"><i class="fas fa-at"></i>{{this.user}}</span>
-               <span><i class="fas fa-paragraph"></i>{{loud this.time}}</span>
+               <span> <i class="fas fa-paragraph"></i>{{loud this.time}}</span>
                    </form>
                 </span>
                
@@ -283,16 +291,11 @@ body {
             <form action='/blog/comment/{{post.slug}}' method='POST'>
     <label for="exampleFormControlTextarea1" class="font-weight-bold text-light">Give a comment:</label>
     <textarea class="form-control" name="comm" id="textarea" required></textarea>
-  <button type="submit" class="btn btn-primary mt-2">Add</button>
+  <button type="submit" class="btn btn-danger mt-2">Add</button>
   </form>
   </div>
     </div>
      {{>footer}}
-     <script>
-     function submitForm() {
-  return confirm('Do you really want to delete the comment?');
-}
-</script>
      <script>
        $(document).ready(function(){
         $('#ax').on('click',function(){

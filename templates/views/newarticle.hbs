@@ -11,7 +11,7 @@
 }
 @media screen and (min-width: 480px) {
   .cax{
-    margin-left:350px;
+    margin-left:250px;
   }
 }
 
@@ -81,23 +81,27 @@ button.btn {
           <a href="/blog/" class="btn btn-info">All Articles<i class="fas fa-feather"></i></a>      
              
                 <a href="/blog/article/my/" class="btn btn-info">My Articles<i class="fas fa-feather"></i></a>      
-                <h1 class="text-center font-weight-bold mt-2 art">New Blog<i class="fas fa-marker"></i></h1>
+                <h1 class="text-center font-weight-bold mt-2 art1 text-danger">New Blog<i class="fas fa-marker"></i></h1>
 
 </div>
 <div class="form4 cax my-4">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7 col-md-offset-2">
+            <div class="col-md-9 col-md-offset-2">
                 <div class="form-bg">
                     <form class="form" action="/blog/new" method="POST">
                         <div class="form-group"> 
-                          <label class="sr-only">Title</label> 
                           <input type="text" name="title" class="form-control" aria-required="true" id="title1" placeholder="Title" required> </div>
                         <div class="form-group"> 
-                          <label class="sr-only">Description</label> 
                           <input type="text" class="form-control" aria-required="true" id="emailNine" placeholder="Description" name="description" required> </div>
+                        <div class="form-group">
+                          <h6>How to write ur blog.</h6>
+                          <p>Follow this instructions</p>
+                          <pre style="white-space:pre-wrap">Italic : *Italic*  | Bold : **Bold** |  Heading : #Heading  | Image : ![Image](https://directual.com/logo.png)  | Link : [Link](https://directual.com) | List : *List or -List  |  Horizontal rule : -------   <br>For syntax to this site:<a href="https://www.markdownguide.org/basic-syntax/">Link</a>
+                          </pre>
+                          
+                        </div>
                         <div class="form-group"> 
-                          <label class="sr-only">Markdown Text</label> 
                           <textarea name="markdown" class="form-control" aria-required="true" rows="7" id="textarea" placeholder="Write Blog" required></textarea> </div> 
                          <div class="form-group">
                           <button type="submit" class="btn text-center btn-blue">Create</button>

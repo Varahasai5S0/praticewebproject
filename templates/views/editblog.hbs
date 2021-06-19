@@ -11,7 +11,7 @@
 }
 @media screen and (min-width: 480px) {
   .cax{
-    margin-left:350px;
+    margin-left:250px;
   }
 }
 
@@ -85,7 +85,7 @@ button.btn {
         </span>
       </h1>
         <div class="row">
-            <div class="col-md-7 col-md-offset-2">
+            <div class="col-md-9 col-md-offset-2">
                 <div class="form-bg">
                     <form class="form" action="/blog/edit/{{post.id}}" method="POST"  onsubmit="return submitForm(this);">
                         <div class="form-group"> 
@@ -94,6 +94,15 @@ button.btn {
                         <div class="form-group"> 
                           <label>Description</label> 
                           <input type="text" class="form-control" aria-required="true" id="emailNine" value={{post.description}} name="description" required> </div>
+                        <div class="form-group"> 
+                          <input type="text" class="form-control" aria-required="true" id="emailNine" placeholder="Description" name="description" required> </div>
+                        <div class="form-group">
+                          <h6>How to write ur blog.</h6>
+                          <p>Follow this instructions</p>
+                          <pre style="white-space:pre-wrap">Italic : *Italic*  | Bold : **Bold** |  Heading : #Heading  | Image : ![Image](https://directual.com/logo.png)  | Link : [Link](https://directual.com) | List : *List or -List  |  Horizontal rule : -------   <br>For syntax to this site:<a href="https://www.markdownguide.org/basic-syntax/">Link</a>
+                          </pre>
+                          
+                        </div>
                         <div class="form-group"> 
                           <label>Markdown Text</label> 
                           <textarea name="markdown" class="form-control" aria-required="true" rows="7" id="textarea" required>{{post.markdown}}</textarea> </div> 

@@ -1033,7 +1033,7 @@ body {
   </div>
 </div>
 <!-- Page Content -->
-
+{{>footer}}
 {{else}}
 <div class="container mt-3">
 
@@ -1044,18 +1044,20 @@ body {
       <img class="img-fluid border-0" src="https://imgur.com/DDNucdQ.png" alt="">
     </div>
 
-    <div class="col-md-6 mt-4">
-      <h1 class="my-2 text-center font-weight-bold art">WELCOME</h1>
-      <h5 class="font-weight-bold text-center  he">to</h5>
-      <h4 class="font-weight-bold morn mb-1 text-center" style="font-family:'Atomic Age' ;">Career Vision</h4>
-      <p class="font-weight-bold text-center">A SMALL STEP TOWARDS SUCCESS</p>
+    <div class="col-md-6 mt-5 pt-5">
+      <h1 class="my-3 text-center font-weight-bold welcome">Welcome</h1>
+      <h1 class="my-1 font-weight-bold text-center" style="font-size: 2rem;">to</h1>
+      <h4 class="font-weight-bold my-1 text-center vision">Career Vision</h4>
+      <p class="font-weight-bold my-1 text-center step">A SMALL STEP TOWARDS SUCCESS</p>
       <hr>
+
+       <h2 class="mt-4 text-center text-dark font-weight-bold" style="font-size: 22px;">Get Started....</h2>
       <div class="mt-4 ml-4 text-center">
-      <a href="/secret" class="btn btn-danger px-3">Career<span class="spinner-grow spinner-grow-sm"></span></a>
+      <a href="/secret" class="btn btn-danger px-3">Career <i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
       <span class="font-weight-bold ml-3">or</span>
-      <a href="/blog" class="btn btn-danger ml-3">Blog <span class="spinner-grow spinner-grow-sm"></span></a>
+      <a href="/blog" class="btn btn-danger ml-3">Blog <i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
       </div>
-      <h2 class="mt-4 text-center text-dark" style="font-size: 22px;">Get Started....</h2>
+     
     </div>
 
   </div>
@@ -1067,6 +1069,6 @@ body {
 
 
 {{/if}}
-{{>footer}}
+
          </body>
 </html>

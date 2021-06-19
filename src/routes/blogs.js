@@ -72,6 +72,7 @@ router.get('/article/my', poss, async(req, res) => {
         res.status(400).redirect('/404error');
     }
 })
+
 router.delete('/delete/:id', async(req, res) => {
     await blogdata.findByIdAndDelete(req.params.id)
     res.redirect('/blog/article/my')
@@ -83,11 +84,15 @@ router.delete('/comments/delete/:id', poss, async(req, res) => {
     var userId = article.usermail;
     if (req.user.email == userId) {
         const article1 = await commentdata.findByIdAndDelete({ _id: req.params.id })
+        const act = await blogdata.findOne({ slug: postslug });
+        const comments = await commentdata.find({ postslug: postslug })
+        res.render("showblog", { post: act, comments: comments, message: "comment deleted succesfully" });
+    } else {
+        const act = await blogdata.findOne({ slug: postslug });
+        const comments = await commentdata.find({ postslug: postslug })
+        res.render("showblog", { post: act, comments: comments, message: "Dont have access to delete it" });
     }
 
-    const act = await blogdata.findOne({ slug: postslug });
-    const comments = await commentdata.find({ postslug: postslug })
-    res.render("showblog", { post: act, comments: comments });
 })
 
 module.exports = router;

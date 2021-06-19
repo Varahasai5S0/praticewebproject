@@ -67,13 +67,13 @@
        
 <div class="container px-3">
                 <a href="/blog/article/my/" class="btn btn-info">My Articles<i class="fas fa-feather"></i></a>      
-                <h1 class="text-center font-weight-bold mt-2 art">Articles<i class="fas fa-drafting-compass"></i></h1>
+                <h1 class="text-center font-weight-bold mt-2 art1">Articles<i class="fas fa-drafting-compass"></i></h1>
 
 </div>
                    
          <div class="container">
              {{#each post}}
-     <div class="card mt-2 border-5 active pb-0 px-3">
+     <div class="card my-2 border-5 active pb-0 px-3">
          <div class="card-body ">
              <div class="row">
                  <div class="col-12 ">
@@ -93,13 +93,12 @@
              <div class="row">
                  <div class="col-md-auto ">
                      <a href="/blog/{{this.slug}}">Read more <i class='fas fa-terminal'></i></a>
-                    <span class="ml-3 text-danger"><i class="fas fa-heart"></i>{{this.likes}}</span>
+                    <span class="ml-3 text-danger"><i class="fas fa-heart"></i>{{this.likes}} <small> likes</small></span>
                  </div>
              </div>
          </div>
      </div>
      {{/each}}
  </div>
- {{>footer}}
     </body>
 </html>

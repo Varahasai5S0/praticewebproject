@@ -14,12 +14,11 @@ body {
 }
 .toc-tab-box h2.acc-title {
     color: #002d5b;
-    background: #FAFAFA;
-    padding: 30px 0px;
-    padding-left: 60px;
+    padding: 10px 0px;
+    padding-left: 40px;
     font-size: 20px;
     font-weight: 400;
-    margin: 0px;
+    margin-bottom: 30px;
     cursor: pointer;
     position: relative;
     transition: all 0.5s ease;
@@ -32,7 +31,7 @@ body {
     width: 100%;
     margin-bottom: 4px;
     float: left;
-    padding: 5px 30px 30px 60px;
+    padding: 5px 30px 30px 40px;
     color: #617693;
     font-size: 14px;
     position: relative;
@@ -71,13 +70,14 @@ body {
 }
 
 .quest .answer {
-    border-left: 1px solid #58ABDF;
+    border-left: 1px solid #58ABDF; 
+    background: #fff;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
     margin-top: 20px;
     margin-left: 20px;
-    padding: 10px 20px 10px 36px;
+    padding: 10px 20px 10px 10px;
 }
 
 .acc-content .quest {
@@ -91,32 +91,45 @@ body {
 
 }
 
+@media (max-width:480px){
+    .cax{
+        padding-left:0;
+    }
+    .cab{
+        padding-left:0px;
+    }
+}
+
+@media (min-width:480px){
+    .cax{
+        padding-left:150px;
+    }
+    .cab{
+        padding-left:400px;
+    }
+}
 
         </style>
     </head>
     <body>
         {{>header}}
-        <div>
+        <div class="container-fluid mx-4" style="width:90%">
             <a href="/secret/" class="btn btn-info ml-4 mt-2"><i class="fas fa-arrow-left"></i>Back/home</a>      
-
-        <h2 class="text-info text-center my-1 font-weight-bold he">{{post.title}}</h2>
-        <h5 class="text-center font-weight-bold mb-1" style="font-family:'Almendra SC'">WISH FOR IT <br>
-             HOPE FOR IT<br>
-             DREAM OF IT<br>
-             <span class="text-danger">BUT ALL MEANS DO IT</span>
-        </h5>
+        <h2 class="text-info text-center mt-1 font-weight-bold he">{{post.title}}</h2>
+        <h5 class="text-danger my-2 font-weight-bold cax">{{post.description}}</h5>
         </div>
 
-<div class="container">
+<h1 class=" text-center text-dark mt-4" style="width:90%">RoadMap:</h1>
+<div class="container mt-4">
         {{#each post.course}}
         <div class="toc-tab-box">
-            <h2 class="acc-title">{{this.classname}}</h2>
+            <h2 class="acc-title">{{this.classname}}<i class="fa fa-pencil" aria-hidden="true"></i></h2>
 
             <div class="acc-content">
                
                 <div class="col-md-12">
                     <div>
-                      <div class="container">
+                      <div class="container mt-3">
                         <p>{{this.classdescription}}</p>
                       </div>
                       {{#each this.jobs}}
@@ -137,7 +150,7 @@ body {
                             </div>
 
                             <div class="answer"  style="display: none;">
-                                <p>{{this.jobdescription}}</p>
+                                {{{this.jobdescription}}}
                             </div>
                         </div>
                         {{/each}}
