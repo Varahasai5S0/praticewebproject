@@ -113,13 +113,16 @@ body {
     </head>
     <body>
         {{>header}}
+        <div class="container mt-2 mx-2">
+            <a href="/secret/" class="btn btn-info mt-2"><i class="fas fa-arrow-left"></i>Back/home</a>      
+   
+        </div>
         <div class="container-fluid mx-4" style="width:90%">
-            <a href="/secret/" class="btn btn-info ml-4 mt-2"><i class="fas fa-arrow-left"></i>Back/home</a>      
-        <h2 class="text-info text-center mt-1 font-weight-bold he">{{post.title}}</h2>
-        <h5 class="text-danger my-2 font-weight-bold cax">{{post.description}}</h5>
+           <h2 class="text-info text-center mt-1 font-weight-bold he">{{post.title}}</h2>
+        <h5 class="text-dark my-2  cax">{{post.description}}</h5>
         </div>
 
-<h1 class=" text-center text-dark mt-4" style="width:90%">RoadMap:</h1>
+<h1 class=" text-center text-dark mt-4" style="width:90%"><u>RoadMap</u></h1>
 <div class="container mt-4">
         {{#each post.course}}
         <div class="toc-tab-box">
@@ -130,7 +133,7 @@ body {
                 <div class="col-md-12">
                     <div>
                       <div class="container mt-3">
-                        <p>{{this.classdescription}}</p>
+                        {{{this.classdescription}}}
                       </div>
                       {{#each this.jobs}}
                         <div class="quest">
@@ -142,7 +145,7 @@ body {
                                             <div class="circle"><span><i class="fas fa-pencil-alt"></i></span></div>
                                         </td>
                                         <td>
-                                            <h4 class="">{{{this.jobtitle}}}</h4>
+                                            <h4 class="">{{this.jobtitle}}</h4>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -163,6 +166,7 @@ body {
               
         </div>
 {{/each}}
+<h6 class="mx-4 my-4"><b>Subjects to be Concentrated: </b>{{post.subject}}</h6>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

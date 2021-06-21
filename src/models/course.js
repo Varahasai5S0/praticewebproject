@@ -24,9 +24,6 @@ const courseSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        classlinks: {
-            type: String
-        },
         jobs: [{
             jobtitle: {
                 type: String,
